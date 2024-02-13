@@ -4,10 +4,15 @@ body {
   margin-top: 20px;
 }
 
+.title {
+  text-align: center;
+}
+
 .quiz {
   width: 600px;
   background-color: rgb(150, 231, 231);
   margin: 0 auto;
+  border-radius: 5px;
 }
 
 .quiz-question {
@@ -25,11 +30,30 @@ body {
   padding: 10px;
 }
 
-.quiz-button-next {
-  width: 100%;
+.block-score-questionof {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.quiz-score,
+.quiz-question-of {
+  font-weight: 700;
+}
+
+.quiz-buttons {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.quiz-button-next,
+.quiz-button-reset {
+  width: 150px;
   padding: 10px;
   font-size: 16px;
   border: none;
   background-color: rgb(9, 88, 88);
   color: #fff;
+  border-radius: 5px;
 }

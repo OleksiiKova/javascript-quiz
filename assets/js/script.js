@@ -1,7 +1,6 @@
-let questions = [
-    {
+let questions = [{
         question: "Where is the correct place to insert a JavaScript?",
-        answers: ["Both the <head> section and the <body> section are correct", "The <body> section", "The <head> section"],
+        answers: ["Both the 'head' section and the 'body' section are correct", "The 'body' section", "The 'head' section"],
         correct: 1,
     },
     {
@@ -56,3 +55,43 @@ let questions = [
     },
 ];
 
+let score = 0;
+let questionNumber = 0;
+
+const quizQuestion = document.querySelector(".quiz-question");
+const listAnswers = document.querySelector(".quiz-answers-list");
+const submitBtn = document.querySelector(".quiz-button-submit");
+const resetBtn = document.querySelector(".quiz-button-reset");
+
+clearHtml()
+showQuestion()
+increaseQuestionOf()
+
+function clearHtml() {
+    quizQuestion.innerHTML = "";
+    listAnswers.innerHTML = "";
+}
+
+function showQuestion() {
+    // Create variable with question
+    const questionTemplate = `<h2 class = "quiz-title">%question%</h2>`;
+    const questionTitle = questionTemplate.replace('%question%', questions[questionNumber]["question"])
+    quizQuestion.innerHTML = questionTitle;
+
+    // Create variable with answers
+    for (item of questions[questionNumber]["answers"]) {
+        const answersTemplate =
+            `<li class="quiz-answers-item">
+                <input type="radio" name="quiz-answers" />
+                %answer%
+            </li>`;
+        let answerText = answersTemplate.replace('%answer%', item);
+        listAnswers.innerHTML += answerText;
+    }
+}
+
+function increaseQuestionOf() {
+    let quizQuestionOf = document.querySelector(".quiz-question-of");
+    let numberOfQuestion = questionNumber + 1;
+    quizQuestionOf.innerHTML = `Question ${numberOfQuestion} of ${questions.length}`;
+}

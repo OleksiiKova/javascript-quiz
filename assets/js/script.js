@@ -63,10 +63,11 @@ const listAnswers = document.querySelector(".quiz-answers-list");
 const submitBtn = document.querySelector(".quiz-button-submit");
 const resetBtn = document.querySelector(".quiz-button-reset");
 
+
 clearHtml()
 showQuestion()
 increaseQuestionOf()
-submitBtn.onclick = checkAnswer; 
+submitBtn.onclick = checkAnswer;
 
 function clearHtml() {
     quizQuestion.innerHTML = "";
@@ -87,8 +88,8 @@ function showQuestion() {
                 %answer%
             </li>`;
         let answerText = answersTemplate
-                            .replace('%answer%', item)
-                            .replace('%num%', index + 1);
+            .replace('%answer%', item)
+            .replace('%num%', index + 1);
         listAnswers.innerHTML += answerText;
     }
 }
@@ -105,11 +106,17 @@ function checkAnswer() {
     // If an answer is not selected the function exits
     if (!checkedRadio) {
         alert("Select answer");
-        return    
+        return
     };
-    
+
     // Get the user's answer
     let userAnswer = parseInt(checkedRadio.value);
 
-    
+    let correctAnswer = questions[questionNumber]['correct'];
+    console.log(correctAnswer)
+
+    if (userAnswer === correctAnswer) {
+        score ++;
+        document.querySelector(".score-correct-answer").innerHTML = score;
+    }
 }

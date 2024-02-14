@@ -80,13 +80,15 @@ function showQuestion() {
     quizQuestion.innerHTML = questionTitle;
 
     // Create variable with answers
-    for (item of questions[questionNumber]["answers"]) {
+    for ([index, item] of questions[questionNumber]["answers"].entries()) {
         const answersTemplate =
             `<li class="quiz-answers-item">
-                <input type="radio" name="quiz-answers" />
+                <input value="%num%" type="radio" name="quiz-answers" />
                 %answer%
             </li>`;
-        let answerText = answersTemplate.replace('%answer%', item);
+        let answerText = answersTemplate
+                            .replace('%answer%', item)
+                            .replace('%num%', index + 1);
         listAnswers.innerHTML += answerText;
     }
 }
@@ -105,5 +107,9 @@ function checkAnswer() {
         alert("Select answer");
         return    
     };
+    
+    // Get the user's answer
+    let userAnswer = parseInt(checkedRadio.value);
+
     
 }

@@ -60,6 +60,7 @@ let questionNumber = 0;
 
 const quizQuestion = document.querySelector(".quiz-question");
 const listAnswers = document.querySelector(".quiz-answers-list");
+const resultsContainer=document.querySelector(".results_container");
 const submitBtn = document.querySelector(".quiz-button-submit");
 const resetBtn = document.querySelector(".quiz-button-reset");
 
@@ -68,10 +69,19 @@ clearHtml()
 showQuestion()
 increaseQuestionOf()
 submitBtn.onclick = checkAnswer;
+resetBtn.onclick = function () {
+    if (confirm("Are you sure? All the progress will be lost!")) {    
+        history.go()
+    }
+    else {
+        return
+    }
+    };
 
 function clearHtml() {
     quizQuestion.innerHTML = "";
     listAnswers.innerHTML = "";
+    resultsContainer.innerHTML = "";
 }
 
 function showQuestion() {
@@ -131,6 +141,8 @@ function checkAnswer() {
 }
 
 function showResults() {
+    document.querySelector(".block-score-questionof").innerHTML = " ";
+
     let resultsTemplate = `
         <h2 class="results-title">%title%</h2>
         <h3 class="results-message">%message%</h3>
@@ -153,5 +165,17 @@ function showResults() {
         message = 'Learn the theory and try again later.';
     }
 
-    let result = `${score} of ${questions.length}`; 
+    let result = `Correct ${score} of ${questions.length} answers!`; 
+
+    let resultsMessage = resultsTemplate
+        .replace('%title%', title)
+        .replace('%message%', message)
+        .replace('%result%', result)
+    
+    resultsContainer.innerHTML = resultsMessage;
+
+    submitBtn.innerText = "Play again";
+    submitBtn.onclick = function () {
+        history.go()
+    };
 }

@@ -18,6 +18,10 @@ body {
 .quiz-question {
 }
 
+.results_container {
+  text-align: center;
+}
+
 .quiz-title {
   padding: 26px;
   text-align: center;

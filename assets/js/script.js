@@ -1,15 +1,15 @@
 let questions = [{
         question: "Where is the correct place to insert a JavaScript?",
-        answers: ["Both the 'head' section and the 'body' section are correct", "The 'body' section", "The 'head' section"],
+        answers: ["Both the \< head> section and the \< body> section are correct", "The \< body> section", "The \< head> section"],
         correct: 1,
     },
     {
         question: "What is the correct syntax for referring to an external script called 'xxx.js'?",
-        answers: ["<script href='xxx.js'", "<script name='xxx.js'", "<script src='xxx.js'"],
+        answers: ["\< script href='xxx.js'>", "\< script name='xxx.js'>", "\< script src='xxx.js'>"],
         correct: 3,
     },
     {
-        question: "The external JavaScript file must contain the <script> tag.",
+        question: "The external JavaScript file must contain the \< script> tag.",
         answers: ["True", "False"],
         correct: 2,
     },
@@ -31,7 +31,7 @@ let questions = [{
     {
         question: "What is the correct way to write a JavaScript array?",
         answers: [
-            "var colors = (1:'red', 2:'green', 3:'blue'",
+            "var colors = (1:'red', 2:'green', 3:'blue')",
             "var colors = 'red', 'green', 'blue'",
             "var colors = 1 = ('red'), 2 = ('green'), 3 = ('blue')",
             "var colors = ['red', 'green', 'blue']"
@@ -66,6 +66,7 @@ const resetBtn = document.querySelector(".quiz-button-reset");
 clearHtml()
 showQuestion()
 increaseQuestionOf()
+submitBtn.onclick = checkAnswer; 
 
 function clearHtml() {
     quizQuestion.innerHTML = "";
@@ -94,4 +95,15 @@ function increaseQuestionOf() {
     let quizQuestionOf = document.querySelector(".quiz-question-of");
     let numberOfQuestion = questionNumber + 1;
     quizQuestionOf.innerHTML = `Question ${numberOfQuestion} of ${questions.length}`;
+}
+
+function checkAnswer() {
+    let checkedRadio = listAnswers.querySelector("input:checked");
+
+    // If an answer is not selected the function exits
+    if (!checkedRadio) {
+        alert("Select answer");
+        return    
+    };
+    
 }

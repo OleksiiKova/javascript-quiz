@@ -13,6 +13,7 @@ body {
   background-color: rgb(150, 231, 231);
   margin: 0 auto;
   border-radius: 5px;
+  padding: 20px;
 }
 
 .quiz-question {
@@ -23,14 +24,17 @@ body {
 }
 
 .quiz-title {
-  padding: 26px;
-  text-align: center;
+  padding: 0 20px;
+
   font-size: 20px;
   font-weight: 700;
 }
 
 .quiz-answers-list {
   list-style-type: none;
+  min-height: 160px;
+  margin: 0;
+  padding: 0;
 }
 
 .quiz-answers-item {

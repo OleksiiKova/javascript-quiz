@@ -4,11 +4,6 @@ let questions = [{
         correct: 1,
     },
     {
-        question: "What is the correct syntax for referring to an external script called 'xxx.js'?",
-        answers: ["\< script href='xxx.js'>", "\< script name='xxx.js'>", "\< script src='xxx.js'>"],
-        correct: 3,
-    },
-    {
         question: "The external JavaScript file must contain the \< script> tag.",
         answers: ["True", "False"],
         correct: 2,
@@ -53,6 +48,11 @@ let questions = [{
         answers: ["onclick", "onmouseover", "onmouseclick", "onchange"],
         correct: 1,
     },
+    {
+        question: "What is the correct syntax for referring to an external script called 'xxx.js'?",
+        answers: ["\< script href='xxx.js'>", "\< script name='xxx.js'>", "\< script src='xxx.js'>"],
+        correct: 3,
+    },
 ];
 
 let score = 0;
@@ -60,28 +60,28 @@ let questionNumber = 0;
 
 const quizQuestion = document.querySelector(".quiz-question");
 const listAnswers = document.querySelector(".quiz-answers-list");
-const resultsContainer=document.querySelector(".results_container");
+const resultsContainer = document.querySelector(".results_container");
 const submitBtn = document.querySelector(".quiz-button-submit");
 const resetBtn = document.querySelector(".quiz-button-reset");
 
 
 clearHtml()
 showQuestion()
-increaseQuestionOf()
+increaseQuestionOf();
 submitBtn.onclick = checkAnswer;
 resetBtn.onclick = function () {
-    if (confirm("Are you sure? All the progress will be lost!")) {    
+    if (confirm("Are you sure? All the progress will be lost!")) {
         history.go()
-    }
-    else {
+    } else {
         return
     }
-    };
+};
 
 function clearHtml() {
     quizQuestion.innerHTML = "";
     listAnswers.innerHTML = "";
     resultsContainer.innerHTML = "";
+
 }
 
 function showQuestion() {
@@ -94,8 +94,10 @@ function showQuestion() {
     for ([index, item] of questions[questionNumber]["answers"].entries()) {
         const answersTemplate =
             `<li class="quiz-answers-item">
-                <input value="%num%" type="radio" name="quiz-answers" />
-                %answer%
+                <label>
+                    <input value="%num%" type="radio" name="quiz-answers" />
+                    %answer%
+                </label>
             </li>`;
         let answerText = answersTemplate
             .replace('%answer%', item)
@@ -123,10 +125,9 @@ function checkAnswer() {
     let userAnswer = parseInt(checkedRadio.value);
 
     let correctAnswer = questions[questionNumber]['correct'];
-    console.log(correctAnswer)
 
     if (userAnswer === correctAnswer) {
-        score ++;
+        score++;
         document.querySelector(".score-correct-answer").innerHTML = score;
     }
 
@@ -134,21 +135,24 @@ function checkAnswer() {
         questionNumber++;
         clearHtml();
         showQuestion();
+        increaseQuestionOf();
     } else {
         clearHtml();
         showResults();
+
     }
 }
 
 function showResults() {
-    document.querySelector(".block-score-questionof").innerHTML = " ";
+    document.querySelector(".block-score-questionof").outerHTML = " ";
+    document.querySelector(".quiz-answers").outerHTML = " ";
 
     let resultsTemplate = `
         <h2 class="results-title">%title%</h2>
         <h3 class="results-message">%message%</h3>
         <p class="results-score" >%result%</p>
         `;
-    
+
     // Answer options based on test results
     let title, message;
     if (score === questions.length) {
@@ -157,7 +161,7 @@ function showResults() {
     } else if ((score * 100) / questions.length >= 50) {
         title = 'Good job!';
         message = "You've answered more than half of the questions correctly";
-    } else if ((score * 100) / questions.length >= 20){
+    } else if ((score * 100) / questions.length >= 20) {
         title = 'Not bad...';
         message = 'But, there is still lots of space for improvement!';
     } else {
@@ -165,17 +169,20 @@ function showResults() {
         message = 'Learn the theory and try again later.';
     }
 
-    let result = `Correct ${score} of ${questions.length} answers!`; 
+    let result = `Correct ${score} of ${questions.length} answers!`;
 
     let resultsMessage = resultsTemplate
         .replace('%title%', title)
         .replace('%message%', message)
         .replace('%result%', result)
-    
+
     resultsContainer.innerHTML = resultsMessage;
 
     submitBtn.innerText = "Play again";
     submitBtn.onclick = function () {
         history.go()
     };
+
+    document.querySelector(".quiz-button-reset").outerHTML = " ";
+
 }

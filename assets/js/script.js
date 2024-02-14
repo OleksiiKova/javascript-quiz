@@ -119,4 +119,39 @@ function checkAnswer() {
         score ++;
         document.querySelector(".score-correct-answer").innerHTML = score;
     }
+
+    if (questionNumber !== questions.length - 1) {
+        questionNumber++;
+        clearHtml();
+        showQuestion();
+    } else {
+        clearHtml();
+        showResults();
+    }
+}
+
+function showResults() {
+    let resultsTemplate = `
+        <h2 class="results-title">%title%</h2>
+        <h3 class="results-message">%message%</h3>
+        <p class="results-score" >%result%</p>
+        `;
+    
+    // Answer options based on test results
+    let title, message;
+    if (score === questions.length) {
+        title = 'Congratulations!';
+        message = "You've answered all the questions correctly";
+    } else if ((score * 100) / questions.length >= 50) {
+        title = 'Good job!';
+        message = "You've answered more than half of the questions correctly";
+    } else if ((score * 100) / questions.length >= 20){
+        title = 'Not bad...';
+        message = 'But, there is still lots of space for improvement!';
+    } else {
+        title = 'Dont be upset...';
+        message = 'Learn the theory and try again later.';
+    }
+
+    let result = `${score} of ${questions.length}`; 
 }

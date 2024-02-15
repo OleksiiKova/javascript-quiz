@@ -127,6 +127,10 @@ body {
   .quiz-button-reset:hover {
     color: white;
   }
+  
+  .block-score-questionof {
+    text-align: center;
+  }
 }
 
 /* Media query: small phone (before 300px) */

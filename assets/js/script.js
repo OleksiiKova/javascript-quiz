@@ -81,8 +81,7 @@ function clearHtml() {
     quizQuestion.innerHTML = "";
     listAnswers.innerHTML = "";
     resultsContainer.innerHTML = "";
-
-}
+};
 
 function showQuestion() {
     // Create variable with question
@@ -117,7 +116,7 @@ function checkAnswer() {
 
     // If an answer is not selected the function exits
     if (!checkedRadio) {
-        alert("Select answer");
+        alert("Select answer!");
         return
     };
 
@@ -126,11 +125,13 @@ function checkAnswer() {
 
     let correctAnswer = questions[questionNumber]['correct'];
 
+    // Compare user's and correct answers
     if (userAnswer === correctAnswer) {
         score++;
         document.querySelector(".score-correct-answer").innerHTML = score;
     }
 
+    // Check is this the last question? 
     if (questionNumber !== questions.length - 1) {
         questionNumber++;
         clearHtml();
@@ -139,13 +140,14 @@ function checkAnswer() {
     } else {
         clearHtml();
         showResults();
-
-    }
+    };
 }
 
 function showResults() {
     document.querySelector(".block-score-questionof").outerHTML = " ";
     document.querySelector(".quiz-answers").outerHTML = " ";
+    document.querySelector(".quiz-button-reset").outerHTML = " ";
+    document.querySelector(".quiz-buttons").className += ' play-again';
 
     let resultsTemplate = `
         <h2 class="results-title">%title%</h2>
@@ -157,17 +159,17 @@ function showResults() {
     let title, message;
     if (score === questions.length) {
         title = 'Congratulations!';
-        message = "You've answered all the questions correctly";
+        message = "You've answered all the questions correctly!";
     } else if ((score * 100) / questions.length >= 50) {
-        title = 'Good job!';
-        message = "You've answered more than half of the questions correctly";
-    } else if ((score * 100) / questions.length >= 20) {
+        title = 'Well done!';
+        message = "You have good knowledge about JS!";
+    } else if ((score * 100) / questions.length >= 30) {
         title = 'Not bad...';
         message = 'But, there is still lots of space for improvement!';
     } else {
-        title = 'Dont be upset...';
-        message = 'Learn the theory and try again later.';
-    }
+        title = 'Don\'t be upset...';
+        message = 'Learn the theory and try again!';
+    };
 
     let result = `Correct ${score} of ${questions.length} answers!`;
 
@@ -182,7 +184,4 @@ function showResults() {
     submitBtn.onclick = function () {
         history.go()
     };
-
-    document.querySelector(".quiz-button-reset").outerHTML = " ";
-
 }

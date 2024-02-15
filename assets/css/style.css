@@ -104,6 +104,7 @@ body {
     padding: 0 10px;
     margin: 10px 0 10px 0;
   }
+
   .block-score-questionof {
     display: block;
     padding: 10px;
@@ -120,6 +121,11 @@ body {
 
   .quiz-title {
     font-size: 18px;
+  }
+
+  .quiz-button-submit:hover,
+  .quiz-button-reset:hover {
+    color: white;
   }
 }
 

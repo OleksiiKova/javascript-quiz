@@ -88,6 +88,40 @@ body {
   color: rgb(150, 231, 231);
 }
 
+.modal-choose-answer {
+  display: none;
+  width: 200px;
+  height: 80px;
+  background-color: #fff;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -100px;
+  margin-top: -40px;
+  border: 2px solid rgb(9, 88, 88);
+}
+
+.modal-visible {
+  display: block;
+}
+.modal-choose-answer-text {
+  color: rgb(9, 88, 88);
+  font-weight: 700;
+}
+.modal-choose-answer-btn {
+  width: 50px;
+  padding: 5px;
+  font-size: 16px;
+  border: none;
+  background-color: rgb(9, 88, 88);
+  color: #fff;
+  border-radius: 5px;
+  letter-spacing: 2px;
+}
+
 /* Media query: phone 300-767px width*/
 @media screen and (max-width: 767px) {
   .quiz {
@@ -127,14 +161,14 @@ body {
   .quiz-button-reset:hover {
     color: white;
   }
-  
+
   .block-score-questionof {
     text-align: center;
   }
 }
 
 /* Media query: small phone (before 300px) */
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 360px) {
   .title {
     font-size: 20px;
     margin: 20px 0;

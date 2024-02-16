@@ -63,6 +63,7 @@ const listAnswers = document.querySelector(".quiz-answers-list");
 const resultsContainer = document.querySelector(".results_container");
 const submitBtn = document.querySelector(".quiz-button-submit");
 const resetBtn = document.querySelector(".quiz-button-reset");
+let modalChooseAnswer = document.querySelector(".modal-choose-answer");
 
 
 clearHtml()
@@ -116,8 +117,14 @@ function checkAnswer() {
 
     // If an answer is not selected the function exits
     if (!checkedRadio) {
-        alert("Select answer!");
-        return
+        showChooseAnswer();
+        let modalBtnOK = document.querySelector(".modal-choose-answer-btn")
+        modalBtnOK.onclick = function hideChooseAnswer() {
+            modalChooseAnswer.className = "modal-choose-answer";
+            return
+        }
+        // alert("Select answer!");
+        // return
     };
 
     // Get the user's answer
@@ -184,4 +191,9 @@ function showResults() {
     submitBtn.onclick = function () {
         history.go()
     };
+}
+
+function showChooseAnswer() {
+    let modalChooseAnswer = document.querySelector(".modal-choose-answer");
+    modalChooseAnswer.className += " modal-visible"; 
 }

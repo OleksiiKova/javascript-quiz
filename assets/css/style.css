@@ -88,38 +88,67 @@ body {
   color: rgb(150, 231, 231);
 }
 
-.modal-choose-answer {
+.popup-choose-answer {
   display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  top: 0;
+  left: 0;
+}
+
+.modal-choose-answer {
   width: 200px;
   height: 80px;
   background-color: #fff;
-  padding: 10px;
+  padding: 20px;
   text-align: center;
   border-radius: 5px;
   position: fixed;
   top: 50%;
   left: 50%;
   margin-left: -100px;
-  margin-top: -40px;
+  margin-top: -50px;
   border: 2px solid rgb(9, 88, 88);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.modal-visible {
+.popup-visible {
   display: block;
 }
 .modal-choose-answer-text {
   color: rgb(9, 88, 88);
   font-weight: 700;
+  margin: 0;
 }
 .modal-choose-answer-btn {
-  width: 50px;
-  padding: 5px;
+  padding: 5px 30px;
   font-size: 16px;
   border: none;
   background-color: rgb(9, 88, 88);
   color: #fff;
   border-radius: 5px;
   letter-spacing: 2px;
+  margin-top: 20px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: rgb(9, 88, 88);
+  line-height: normal;
+  margin: 0;
+  border: none;
+  background-color: #fff;
+  margin-right: 5px;
+  margin-top: 5px;
+  font-size: 16px;
 }
 
 /* Media query: phone 300-767px width*/

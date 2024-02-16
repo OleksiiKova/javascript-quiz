@@ -70,13 +70,16 @@ clearHtml()
 showQuestion()
 increaseQuestionOf();
 submitBtn.onclick = checkAnswer;
-resetBtn.onclick = function () {
-    if (confirm("Are you sure? All the progress will be lost!")) {
-        history.go()
-    } else {
-        return
-    }
-};
+resetBtn.onclick = showStartAgain;
+
+
+//     function () {
+//     if (confirm("Are you sure? All the progress will be lost!")) {
+//         history.go()
+//     } else {
+//         return
+//     }
+// };
 
 function clearHtml() {
     quizQuestion.innerHTML = "";
@@ -191,10 +194,31 @@ function showResults() {
     };
 }
 
+
+// Pop-up choose answer
 function showChooseAnswer() {
     popupChooseAnswer.className += " popup-visible"; 
-}
+};
 
 function hideChooseAnswer() {
     popupChooseAnswer.classList.remove("popup-visible");
+};
+
+
+
+// Pop-up are you sure to start again
+document.querySelector(".modal-start-again-btn-cancel").onclick = hideStartAgain;
+document.querySelector(".close-btn-again").onclick = hideStartAgain;
+document.querySelector(".modal-start-again-btn-ok").onclick = restart;
+    
+function restart() {
+    location.reload();
 }
+
+function showStartAgain() {
+    document.querySelector(".popup-start-again").className += " popup-visible";
+};
+
+function hideStartAgain() {
+    document.querySelector(".popup-start-again").classList.remove("popup-visible");
+};

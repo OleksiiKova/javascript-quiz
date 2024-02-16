@@ -88,9 +88,13 @@ body {
   color: rgb(150, 231, 231);
 }
 
-.popup-choose-answer {
+/*               Pop-up windows start again and choose answer              */
+
+/* Hide the main content, when pop-up is active */
+.popup-choose-answer,
+.popup-start-again {
   display: none;
-  position: fixed;
+  position: absolute;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
@@ -98,9 +102,10 @@ body {
   left: 0;
 }
 
-.modal-choose-answer {
-  width: 200px;
-  height: 80px;
+.modal-choose-answer,
+.modal-start-again {
+  width: 300px;
+  height: 100px;
   background-color: #fff;
   padding: 20px;
   text-align: center;
@@ -108,25 +113,29 @@ body {
   position: fixed;
   top: 50%;
   left: 50%;
-  margin-left: -100px;
-  margin-top: -50px;
+  margin-left: -170px;
+  margin-top: -70px;
   border: 2px solid rgb(9, 88, 88);
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
 }
 
 .popup-visible {
   display: block;
 }
-.modal-choose-answer-text {
+
+.modal-choose-answer-text,
+.modal-start-again-text {
   color: rgb(9, 88, 88);
   font-weight: 700;
   margin: 0;
 }
-.modal-choose-answer-btn {
+
+.modal-choose-answer-btn,
+.modal-start-again-btn-ok,
+.modal-start-again-btn-cancel {
   padding: 5px 30px;
   font-size: 16px;
   border: none;
@@ -135,9 +144,20 @@ body {
   border-radius: 5px;
   letter-spacing: 2px;
   margin-top: 20px;
+  min-width: 120px;
 }
 
-.close-btn {
+.modal-choose-answer-btn {
+  align-self: center;
+}
+
+.modal-start-again-btn {
+  display: flex;
+  justify-content: space-around;
+}
+
+.close-btn,
+.close-btn-again {
   position: absolute;
   top: 0;
   right: 0;

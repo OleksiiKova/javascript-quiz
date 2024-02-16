@@ -1,58 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Quiz</title>
+    <!-- Meta tags for search engines -->
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- Favicon -->
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>JavaScript Quiz</title>
-  <!-- Meta tags for search engines -->
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <!-- Favicon -->
-</head>
-
-<body>
-  <div class="wrapper">
-    <h1 class="title">Check your JavaScript knowledge by having fun!</h1>
-    <div class="quiz">
-      <div class="quiz-question">
-        <h2 class="quiz-title">Question 1</h2>
-      </div>
-      <div class="results_container"></div>
-      <div class="quiz-answers">
-        <ul class="quiz-answers-list"></ul>
-      </div>
-      <div class="block-score-questionof">
-        <div class="quiz-question-of">Question 1 of 10</div>
-        <div class="quiz-score">
-          Correct answers: <span class="score-correct-answer">0</span>
+  <body>
+    <div class="wrapper">
+      <h1 class="title">Check your JavaScript knowledge by having fun!</h1>
+      <div class="quiz">
+        <div class="quiz-question">
+          <h2 class="quiz-title">Question 1</h2>
+        </div>
+        <div class="results_container"></div>
+        <div class="quiz-answers">
+          <ul class="quiz-answers-list"></ul>
+        </div>
+        <div class="block-score-questionof">
+          <div class="quiz-question-of">Question 1 of 10</div>
+          <div class="quiz-score">
+            Correct answers: <span class="score-correct-answer">0</span>
+          </div>
+        </div>
+        <div class="quiz-buttons">
+          <button class="quiz-button-reset">Start again</button>
+          <button class="quiz-button-submit" type="button">
+            Next <i class="fa-solid fa-forward"></i>
+          </button>
         </div>
       </div>
-      <div class="quiz-buttons">
-        <button class="quiz-button-reset">Start again</button>
-        <button class="quiz-button-submit" type="button">
-          Next <i class="fa-solid fa-forward"></i>
-        </button>
-      </div>
     </div>
-  </div>
-  <div class="popup-choose-answer">
-    <div class="modal-choose-answer">
-      <button class="close-btn"><i class="fa-solid fa-xmark"></i></button>
-      <p class="modal-choose-answer-text">Choose answer!</p>
-      <button class="modal-choose-answer-btn">OK</button>
+    <div class="popup-choose-answer">
+      <div class="modal-choose-answer">
+        <button class="close-btn"><i class="fa-solid fa-xmark"></i></button>
+        <p class="modal-choose-answer-text">Choose answer!</p>
+        <button class="modal-choose-answer-btn">OK</button>
+      </div>
     </div>
     <div class="popup-start-again">
       <div class="modal-start-again">
-        <button class="close-btn"><i class="fa-solid fa-xmark"></i></button>
-        <p class="modal-start-again-text">Are you sure? All the progress will lost!</p>
-        <button class="modal-start-again-btn">OK</button>
+        <button class="close-btn-again"><i class="fa-solid fa-xmark"></i></button>
+        <p class="modal-start-again-text">
+          Are you sure?<br />
+          All the progress will lost!
+        </p>
+        <div class="modal-start-again-btn">
+          <button class="modal-start-again-btn-cancel">Cancel</button>
+          <button class="modal-start-again-btn-ok">OK</button>
+        </div>
       </div>
     </div>
     <!-- Font awesome kit -->
-    <script src="https://kit.fontawesome.com/1e754c32b5.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/1e754c32b5.js"
+      crossorigin="anonymous"
+    ></script>
 
     <script src="assets/js/script.js"></script>
-</body>
-
+  </body>
 </html>

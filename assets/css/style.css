@@ -27,7 +27,6 @@ body {
   margin: 0 auto;
   border-radius: 5px;
   padding: 20px;
-  min-height: 358px;
 }
 
 .results_container {
@@ -67,6 +66,7 @@ body {
   justify-content: space-between;
   padding: 20px;
   padding-bottom: 0;
+  
 }
 
 .play-again {
@@ -75,7 +75,8 @@ body {
 
 .quiz-button-submit,
 .quiz-button-next,
-.quiz-button-reset {
+.quiz-button-reset,
+.quiz-button-finish {
   width: 150px;
   padding: 10px;
   font-size: 16px;

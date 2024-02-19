@@ -87,7 +87,9 @@ function clearHtml() {
     quizQuestion.innerHTML = "";
     listAnswers.innerHTML = "";
     resultsContainer.innerHTML = "";
-    document.querySelector(".quiz-button-next").classList.add('hidden');
+    if (document.querySelector(".quiz-button-next")) {
+        document.querySelector(".quiz-button-next").classList.add('hidden')
+    };
     document.querySelector(".quiz-button-submit").classList.remove('hidden');
     document.querySelector(".quiz-buttons").classList.remove('show-easy');
 };
@@ -121,7 +123,7 @@ function increaseQuestionOf() {
 }
 
 function checkAnswer() {
-    
+
     let checkedRadio = listAnswers.querySelector("input:checked");
 
     // If an answer is not selected the function exits
@@ -153,7 +155,7 @@ function checkAnswer() {
         document.querySelector(".quiz-button-next").classList.remove('hidden');
         document.querySelector(".quiz-button-reset").classList.remove('hidden');
         document.querySelector(".quiz-buttons").classList.add('show-easy');
-    }, 2000);
+    }, 1500);
 
     // Compare user's and correct answers
     if (userAnswer === correctAnswer) {
@@ -164,14 +166,14 @@ function checkAnswer() {
         document.querySelector(".selected").classList.add("selected-wrong");
 
     };
-    
+
     document.querySelector(".quiz-button-submit").classList.add('hidden');
     document.querySelector(".quiz-button-reset").classList.add('hidden');
 
     // Check is this the last question? 
     if (questionNumber !== questions.length - 1) {
         questionNumber++;
-        document.querySelector(".quiz-button-next").onclick = function() {
+        document.querySelector(".quiz-button-next").onclick = function () {
             clearHtml();
             showQuestion();
             increaseQuestionOf();
@@ -184,9 +186,19 @@ function checkAnswer() {
             //     `
         };
     } else {
-        // document.querySelector(".quiz-button-next").onclick = function()
-        clearHtml();
-        showResults();
+        setTimeout(() => {
+            document.querySelector(".quiz-button-reset").classList.remove('hidden');
+            document.querySelector(".quiz-button-next").outerHTML =
+                `
+                <button class="quiz-button-finish" type="button">
+                 Get results
+                </button>
+                `
+            document.querySelector(".quiz-button-finish").onclick = function () {
+                clearHtml();
+                showResults();
+            }
+        }, 2000);
     };
 }
 
@@ -197,6 +209,7 @@ function showResults() {
     document.querySelector(".quiz-answers").outerHTML = " ";
     document.querySelector(".quiz-button-reset").outerHTML = " ";
     document.querySelector(".quiz-buttons").className += ' play-again';
+    document.querySelector(".quiz-button-finish").outerHTML = " ";
 
     let resultsTemplate = `
         <h2 class="results-title">%title%</h2>

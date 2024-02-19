@@ -89,6 +89,7 @@ function clearHtml() {
     resultsContainer.innerHTML = "";
     document.querySelector(".quiz-button-next").classList.add('hidden');
     document.querySelector(".quiz-button-submit").classList.remove('hidden');
+    document.querySelector(".quiz-buttons").classList.remove('show-easy');
 };
 
 function showQuestion() {
@@ -150,6 +151,8 @@ function checkAnswer() {
         document.querySelector(".selected").classList.remove("selected-blink");
         document.querySelector(".score-correct-answer").innerHTML = score;
         document.querySelector(".quiz-button-next").classList.remove('hidden');
+        document.querySelector(".quiz-button-reset").classList.remove('hidden');
+        document.querySelector(".quiz-buttons").classList.add('show-easy');
     }, 2000);
 
     // Compare user's and correct answers
@@ -163,13 +166,7 @@ function checkAnswer() {
     };
     
     document.querySelector(".quiz-button-submit").classList.add('hidden');
-    // submitBtn.outerHTML = `
-    // <button class="quiz-button-next" type="button">
-    //         Next
-    //       </button>
-    //       `;
-    
-
+    document.querySelector(".quiz-button-reset").classList.add('hidden');
 
     // Check is this the last question? 
     if (questionNumber !== questions.length - 1) {

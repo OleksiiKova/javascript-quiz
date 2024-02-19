@@ -65,8 +65,7 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 20px;
-  padding-bottom: 0;
-  
+  min-height: 38px;
 }
 
 .play-again {

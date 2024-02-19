@@ -27,7 +27,7 @@ body {
   margin: 0 auto;
   border-radius: 5px;
   padding: 20px;
-  min-height: 380px;
+  min-height: 358px;
 }
 
 .results_container {
@@ -66,6 +66,7 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 20px;
+  padding-bottom: 0;
 }
 
 .play-again {

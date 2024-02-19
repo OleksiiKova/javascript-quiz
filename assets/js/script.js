@@ -184,6 +184,7 @@ function checkAnswer() {
             //     `
         };
     } else {
+        // document.querySelector(".quiz-button-next").onclick = function()
         clearHtml();
         showResults();
     };

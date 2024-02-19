@@ -69,8 +69,10 @@ const popupChooseAnswer = document.querySelector(".popup-choose-answer");
 clearHtml()
 showQuestion()
 increaseQuestionOf();
+selectedRadio();
 submitBtn.onclick = checkAnswer;
 resetBtn.onclick = showStartAgain;
+
 
 
 //     function () {
@@ -85,6 +87,8 @@ function clearHtml() {
     quizQuestion.innerHTML = "";
     listAnswers.innerHTML = "";
     resultsContainer.innerHTML = "";
+    document.querySelector(".quiz-button-next").classList.add('hidden');
+    document.querySelector(".quiz-button-submit").classList.remove('hidden');
 };
 
 function showQuestion() {
@@ -116,40 +120,79 @@ function increaseQuestionOf() {
 }
 
 function checkAnswer() {
+    
     let checkedRadio = listAnswers.querySelector("input:checked");
 
     // If an answer is not selected the function exits
     if (!checkedRadio) {
+        // Show pop-up window with text "Select answer"
         showChooseAnswer();
-
         // Hide pop-up window with text Choose answer
-        document.querySelector(".modal-choose-answer-btn").onclick = hideChooseAnswer;     
+        document.querySelector(".modal-choose-answer-btn").onclick = hideChooseAnswer;
         document.querySelector(".close-btn").onclick = hideChooseAnswer;
-        
+
     };
+
+
 
     // Get the user's answer
     let userAnswer = parseInt(checkedRadio.value);
-
     let correctAnswer = questions[questionNumber]['correct'];
+
+    // Add disabled attribute to the inputs after press submit
+    document.querySelectorAll('input[type="radio"]').forEach(function (disableRadioButton) {
+        disableRadioButton.disabled = true;
+    });
+
+    // Add animation after press submit
+    document.querySelector(".selected").className += " selected-blink";
+    setTimeout(() => {
+        document.querySelector(".selected").classList.remove("selected-blink");
+        document.querySelector(".score-correct-answer").innerHTML = score;
+        document.querySelector(".quiz-button-next").classList.remove('hidden');
+    }, 2000);
 
     // Compare user's and correct answers
     if (userAnswer === correctAnswer) {
         score++;
-        document.querySelector(".score-correct-answer").innerHTML = score;
-    }
+        document.querySelector(".selected").classList.add("selected-correct");
+
+    } else {
+        document.querySelector(".selected").classList.add("selected-wrong");
+
+    };
+    
+    document.querySelector(".quiz-button-submit").classList.add('hidden');
+    // submitBtn.outerHTML = `
+    // <button class="quiz-button-next" type="button">
+    //         Next
+    //       </button>
+    //       `;
+    
+
 
     // Check is this the last question? 
     if (questionNumber !== questions.length - 1) {
         questionNumber++;
-        clearHtml();
-        showQuestion();
-        increaseQuestionOf();
+        document.querySelector(".quiz-button-next").onclick = function() {
+            clearHtml();
+            showQuestion();
+            increaseQuestionOf();
+            selectedRadio();
+            // document.querySelector(".quiz-button-next").outerHTML =
+            // `
+            //     <button class="quiz-button-submit" type="button">
+            //      Submit
+            //     </button>
+            //     `
+        };
     } else {
         clearHtml();
         showResults();
     };
 }
+
+
 
 function showResults() {
     document.querySelector(".block-score-questionof").outerHTML = " ";
@@ -197,7 +240,7 @@ function showResults() {
 
 // Pop-up choose answer
 function showChooseAnswer() {
-    popupChooseAnswer.className += " popup-visible"; 
+    popupChooseAnswer.className += " popup-visible";
 };
 
 function hideChooseAnswer() {
@@ -205,12 +248,11 @@ function hideChooseAnswer() {
 };
 
 
-
 // Pop-up are you sure to start again
 document.querySelector(".modal-start-again-btn-cancel").onclick = hideStartAgain;
 document.querySelector(".close-btn-again").onclick = hideStartAgain;
 document.querySelector(".modal-start-again-btn-ok").onclick = restart;
-    
+
 function restart() {
     location.reload();
 }
@@ -222,3 +264,41 @@ function showStartAgain() {
 function hideStartAgain() {
     document.querySelector(".popup-start-again").classList.remove("popup-visible");
 };
+
+
+
+// let label = document.getElementsByTagName('label');
+// for (let i = 0; i <= label.length; i++) {
+//     label[i].addEventListener('click', function () {
+//         console.log("Ghb")
+//         let checkedRadio = listAnswers.querySelector("input:checked");
+//         let userAnswer = parseInt(checkedRadio.value);
+//         let correctAnswer = questions[questionNumber]['correct'];
+
+//         if (userAnswer === correctAnswer) {
+//         label[i].style.backgroundColor = "green";
+//         } else {
+//             label[i].style.backgroundColor = "red";
+//         }
+
+//     }
+//     );
+// };
+
+function selectedRadio() {
+    const radioButtons = document.querySelectorAll('input[type="radio"]');
+    radioButtons.forEach(function (radioButton) {
+        radioButton.addEventListener("change", function () {
+            removeClassFromAll();
+            if (this.checked) {
+                this.parentNode.parentNode.classList.add("selected");
+            }
+        });
+    });
+
+    function removeClassFromAll() {
+        radioButtons.forEach(function (radioButton) {
+            radioButton.parentNode.parentNode.classList.remove("selected");
+        });
+    }
+}

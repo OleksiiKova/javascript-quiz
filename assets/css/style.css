@@ -72,6 +72,7 @@ body {
 }
 
 .quiz-button-submit,
+.quiz-button-next,
 .quiz-button-reset {
   width: 150px;
   padding: 10px;
@@ -169,6 +170,40 @@ body {
   margin-right: 5px;
   margin-top: 5px;
   font-size: 16px;
+}
+
+li {
+  border-radius: 5px;
+}
+
+.selected {
+  background-color: lightblue;
+}
+
+.selected-correct {
+  background-color: lightgreen;
+}
+
+.selected-wrong {
+  background-color: rgb(243, 92, 92);
+}
+
+.selected-blink {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    background-color: rgb(150, 231, 231);
+  }
+  50% {
+    background-color: lightblue;
+  }
+}
+
+.hidden {
+  display: none;
 }
 
 /* Media query: phone 300-767px width*/

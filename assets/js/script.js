@@ -136,8 +136,6 @@ function checkAnswer() {
 
     };
 
-
-
     // Get the user's answer
     let userAnswer = parseInt(checkedRadio.value);
     let correctAnswer = questions[questionNumber]['correct'];
@@ -162,7 +160,9 @@ function checkAnswer() {
         score++;
         document.querySelector(".selected").classList.add("selected-correct");
         setTimeout(() => {
-            playCorrectSound();
+            if (document.querySelector('.sound-off').classList.contains("hidden")) {
+                playCorrectSound();
+            };
         }, 1200);
 
     } else {
@@ -170,7 +170,10 @@ function checkAnswer() {
             document.querySelector(".selected").classList.add("selected-wrong");
             let correctInput = document.querySelector('input[value="' + correctAnswer + '"]');
             correctInput.parentNode.parentNode.classList.add('selected-correct');
-            playWrongSound();
+
+            if (document.querySelector('.sound-off').classList.contains("hidden")) {
+                playWrongSound();
+            };
         }, 1500);
     };
 
@@ -301,4 +304,21 @@ function playWrongSound() {
 function playCorrectSound() {
     let correctSound = document.getElementById('correct');
     correctSound.play()
+};
+
+
+
+let muteOff = document.querySelector('.sound-off');
+let muteOn = document.querySelector('.sound-on');
+muteOff.onclick = soundOn;
+muteOn.onclick = soundOff;
+
+function soundOn() {
+    muteOff.classList.add('hidden');
+    muteOn.classList.remove('hidden');
+};
+
+function soundOff() {
+    muteOn.classList.add('hidden');
+    muteOff.classList.remove('hidden');
 };

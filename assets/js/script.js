@@ -161,12 +161,16 @@ function checkAnswer() {
     if (userAnswer === correctAnswer) {
         score++;
         document.querySelector(".selected").classList.add("selected-correct");
+        setTimeout(() => {
+            playCorrectSound();
+        }, 1200);
 
     } else {
         setTimeout(() => {
             document.querySelector(".selected").classList.add("selected-wrong");
             let correctInput = document.querySelector('input[value="' + correctAnswer + '"]');
             correctInput.parentNode.parentNode.classList.add('selected-correct');
+            playWrongSound();
         }, 1500);
     };
 
@@ -181,12 +185,6 @@ function checkAnswer() {
             showQuestion();
             increaseQuestionOf();
             selectedRadio();
-            // document.querySelector(".quiz-button-next").outerHTML =
-            // `
-            //     <button class="quiz-button-submit" type="button">
-            //      Submit
-            //     </button>
-            //     `
         };
     } else {
         setTimeout(() => {
@@ -203,8 +201,7 @@ function checkAnswer() {
             }
         }, 1500);
     };
-}
-
+};
 
 
 function showResults() {
@@ -261,7 +258,6 @@ function hideChooseAnswer() {
     popupChooseAnswer.classList.remove("popup-visible");
 };
 
-
 // Pop-up are you sure to start again
 document.querySelector(".modal-start-again-btn-cancel").onclick = hideStartAgain;
 document.querySelector(".close-btn-again").onclick = hideStartAgain;
@@ -279,26 +275,6 @@ function hideStartAgain() {
     document.querySelector(".popup-start-again").classList.remove("popup-visible");
 };
 
-
-
-// let label = document.getElementsByTagName('label');
-// for (let i = 0; i <= label.length; i++) {
-//     label[i].addEventListener('click', function () {
-//         console.log("Ghb")
-//         let checkedRadio = listAnswers.querySelector("input:checked");
-//         let userAnswer = parseInt(checkedRadio.value);
-//         let correctAnswer = questions[questionNumber]['correct'];
-
-//         if (userAnswer === correctAnswer) {
-//         label[i].style.backgroundColor = "green";
-//         } else {
-//             label[i].style.backgroundColor = "red";
-//         }
-
-//     }
-//     );
-// };
-
 function selectedRadio() {
     const radioButtons = document.querySelectorAll('input[type="radio"]');
     radioButtons.forEach(function (radioButton) {
@@ -315,4 +291,14 @@ function selectedRadio() {
             radioButton.parentNode.parentNode.classList.remove("selected");
         });
     }
-}
+};
+
+function playWrongSound() {
+    let wrongSound = document.getElementById('wrong');
+    wrongSound.play()
+};
+
+function playCorrectSound() {
+    let correctSound = document.getElementById('correct');
+    correctSound.play()
+};

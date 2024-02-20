@@ -269,6 +269,7 @@ li {
 
   .block-score-questionof {
     text-align: center;
+    font-size: 14px;
   }
 }
 
@@ -288,9 +289,5 @@ li {
 
   .quiz-button-reset {
     margin-top: 16px;
-  }
-
-  .block-score-questionof {
-    text-align: center;
   }
 }

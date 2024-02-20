@@ -130,6 +130,9 @@ function checkAnswer() {
     if (!checkedRadio) {
         // Show pop-up window with text "Select answer"
         showChooseAnswer();
+        if (document.querySelector('.sound-off').classList.contains("hidden")) {
+            playNotificationSound();
+            };
         // Hide pop-up window with text Choose answer
         document.querySelector(".modal-choose-answer-btn").onclick = hideChooseAnswer;
         document.querySelector(".close-btn").onclick = hideChooseAnswer;
@@ -249,7 +252,7 @@ function showResults() {
     submitBtn.onclick = function () {
         history.go()
     };
-}
+};
 
 
 // Pop-up choose answer
@@ -272,6 +275,9 @@ function restart() {
 
 function showStartAgain() {
     document.querySelector(".popup-start-again").className += " popup-visible";
+    if (document.querySelector('.sound-off').classList.contains("hidden")) {
+            playNotificationSound();
+            };
 };
 
 function hideStartAgain() {
@@ -304,6 +310,11 @@ function playWrongSound() {
 function playCorrectSound() {
     let correctSound = document.getElementById('correct');
     correctSound.play()
+};
+
+function playNotificationSound() {
+    let notificationSound = document.getElementById('notification');
+    notificationSound.play()
 };
 
 

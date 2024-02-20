@@ -163,8 +163,11 @@ function checkAnswer() {
         document.querySelector(".selected").classList.add("selected-correct");
 
     } else {
-        document.querySelector(".selected").classList.add("selected-wrong");
-
+        setTimeout(() => {
+            document.querySelector(".selected").classList.add("selected-wrong");
+            let correctInput = document.querySelector('input[value="' + correctAnswer + '"]');
+            correctInput.parentNode.parentNode.classList.add('selected-correct');
+        }, 1500);
     };
 
     document.querySelector(".quiz-button-submit").classList.add('hidden');
@@ -198,7 +201,7 @@ function checkAnswer() {
                 clearHtml();
                 showResults();
             }
-        }, 2000);
+        }, 1500);
     };
 }
 

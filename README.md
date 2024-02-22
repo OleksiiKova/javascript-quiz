@@ -1,39 +1,27 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# JavaScript quiz
 
-Welcome,
+JavaScript quiz is the game or competition whose purpose is to test your knowledge. And as you may have guessed from the name of the site, this is the game for testing knowledge of one of the most popular programming languages - JavaScript.
+This quiz is designed to help you make sure of your knowledge, and also relax and have fun.
 
-This is the Code Institute student template for Codeanywhere. If you are using Gitpod then you need [this template](https://github.com/Code-Institute-Org/gitpod-full-template) instead.  We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+## Technologies
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **August 30th, 2023**
+1. Balsamiq - to create a wireframe.
+2. HTML - to create a basic site.
+3. CSS - to create front-end and to give a great user experience.
+4. JavaScript - to create a dynamic and interactive web page to interact with visitors.
+5. GitHub - source code hosting and deployment.
 
-## Codeanywhere Reminders
+## UX
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
+### Strategy
 
-`python3 -m http.server`
+This quiz is designed to help you make sure of your knowledge, and also relax and have fun. The website is designed in such a way that it can be replaced with any other questions, and in any quantity. Therefore, it can be used for absolutely any topic.
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+### Scope
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
+JavaScript quiz is primarily created for developers of all levels to test their knowledge. And it can be used independently or as a separate page of an existing site.
+It can be used both for entertainment purposes and as part of a Sowtware Development courses.
 
-`http_server`
+### Structure
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
-
-A button should appear to click: _Open Preview_ or _Open Browser_.
-
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
----
-
-Happy coding!
+JavaScript quiz consists of only one main page, but thanks to JS it allows you to replace content when it is needed and how many times it is needed.

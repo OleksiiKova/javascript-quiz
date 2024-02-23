@@ -8,51 +8,7 @@ let questions = [{
         answers: ["True", "False"],
         correct: 2,
     },
-    {
-        question: "How do you create a function in JavaScript?",
-        answers: ["function = myFunction()", "function myFunction()", "function: myFunction()"],
-        correct: 2,
-    },
-    {
-        question: "How does a WHILE loop start?",
-        answers: ["while (i <= 10; i++)", "while (i <= 10)", "while i = 1 to 10"],
-        correct: 2,
-    },
-    {
-        question: "How does a FOR loop start?",
-        answers: ["for(i <= 5; i++)", "for(i = 0, i <= 5, i++)", "for(i = 0; i <= 5; i++)", "for(i = 0, i <= 5)"],
-        correct: 3,
-    },
-    {
-        question: "What is the correct way to write a JavaScript array?",
-        answers: [
-            "var colors = (1:'red', 2:'green', 3:'blue')",
-            "var colors = 'red', 'green', 'blue'",
-            "var colors = 1 = ('red'), 2 = ('green'), 3 = ('blue')",
-            "var colors = ['red', 'green', 'blue']"
-        ],
-        correct: 4,
-    },
-    {
-        question: "How do you round the number 7.25, to the nearest integer?",
-        answers: ["math.Round(7.25)", "round(7.25)", "Math.rnd(7.25)", "Math.round(7.25)"],
-        correct: 4
-    },
-    {
-        question: "Is JavaScript case-sensitive?",
-        answers: ["Yes", "No"],
-        correct: 1,
-    },
-    {
-        question: "Which event occurs when the user clicks on an HTML element?",
-        answers: ["onclick", "onmouseover", "onmouseclick", "onchange"],
-        correct: 1,
-    },
-    {
-        question: "What is the correct syntax for referring to an external script called 'xxx.js'?",
-        answers: ["\< script href='xxx.js'>", "\< script name='xxx.js'>", "\< script src='xxx.js'>"],
-        correct: 3,
-    },
+ 
 ];
 
 let score = 0;
@@ -61,17 +17,12 @@ let questionNumber = 0;
 const quizQuestion = document.querySelector(".quiz-question");
 const listAnswers = document.querySelector(".quiz-answers-list");
 const resultsContainer = document.querySelector(".results_container");
-const submitBtn = document.querySelector(".quiz-button-submit");
 const resetBtn = document.querySelector(".quiz-button-reset");
 const popupChooseAnswer = document.querySelector(".popup-choose-answer");
+const nextBtn = document.querySelector(".quiz-button-next");
 
 
-clearHtml()
-showQuestion()
-increaseQuestionOf();
-selectedRadio();
-submitBtn.onclick = checkAnswer;
-resetBtn.onclick = showStartAgain;
+
 
 
 
@@ -87,10 +38,9 @@ function clearHtml() {
     quizQuestion.innerHTML = "";
     listAnswers.innerHTML = "";
     resultsContainer.innerHTML = "";
-    if (document.querySelector(".quiz-button-next")) {
-        document.querySelector(".quiz-button-next").classList.add('hidden')
-    };
-    document.querySelector(".quiz-button-submit").classList.remove('hidden');
+    // if (document.querySelector(".quiz-button-next")) {
+    //     document.querySelector(".quiz-button-next").classList.add('hidden')
+    // };
     document.querySelector(".quiz-buttons").classList.remove('show-easy');
 };
 
@@ -180,22 +130,23 @@ function checkAnswer() {
         }, 1500);
     };
 
-    document.querySelector(".quiz-button-submit").classList.add('hidden');
-    document.querySelector(".quiz-button-reset").classList.add('hidden');
+    nextBtn.classList.add('hidden');
+    resetBtn.classList.add('hidden');
 
     // Check is this the last question? 
     if (questionNumber !== questions.length - 1) {
         questionNumber++;
-        document.querySelector(".quiz-button-next").onclick = function () {
+        nextBtn.onclick = function () {
             clearHtml();
             showQuestion();
             increaseQuestionOf();
             selectedRadio();
+            selectAnswer();
         };
     } else {
         setTimeout(() => {
             document.querySelector(".quiz-button-reset").classList.remove('hidden');
-            document.querySelector(".quiz-button-next").outerHTML =
+            nextBtn.outerHTML =
                 `
                 <button class="quiz-button-finish" type="button">
                  Get results
@@ -215,7 +166,7 @@ function showResults() {
     document.querySelector(".quiz-answers").outerHTML = " ";
     document.querySelector(".quiz-button-reset").outerHTML = " ";
     document.querySelector(".quiz-buttons").className += ' play-again';
-    document.querySelector(".quiz-button-finish").outerHTML = " ";
+    // document.querySelector(".quiz-button-finish").outerHTML = " ";
 
     let resultsTemplate = `
         <h2 class="results-title">%title%</h2>
@@ -248,8 +199,8 @@ function showResults() {
 
     resultsContainer.innerHTML = resultsMessage;
 
-    submitBtn.innerText = "Play again";
-    submitBtn.onclick = function () {
+    document.querySelector(".quiz-button-finish").innerText = "Play again";
+    document.querySelector(".quiz-button-finish").onclick = function () {
         history.go()
     };
 };
@@ -292,6 +243,7 @@ function selectedRadio() {
             if (this.checked) {
                 this.parentNode.parentNode.classList.add("selected");
             }
+            checkAnswer();
         });
     });
 
@@ -332,4 +284,30 @@ function soundOn() {
 function soundOff() {
     muteOn.classList.add('hidden');
     muteOff.classList.remove('hidden');
+};
+
+clearHtml()
+showQuestion()
+increaseQuestionOf();
+selectedRadio();
+resetBtn.onclick = showStartAgain;
+selectAnswer();
+
+function selectAnswer() {
+nextBtn.onclick = function () {
+    let checkedRadio = listAnswers.querySelector("input:checked");
+
+    // If an answer is not selected the function exits
+    if (!checkedRadio) {
+        // Show pop-up window with text "Select answer"
+        showChooseAnswer();
+        if (document.querySelector('.sound-off').classList.contains("hidden")) {
+            playNotificationSound();
+            };
+        // Hide pop-up window with text Choose answer
+        document.querySelector(".modal-choose-answer-btn").onclick = hideChooseAnswer;
+        document.querySelector(".close-btn").onclick = hideChooseAnswer;
+
+    };
+    }
 };

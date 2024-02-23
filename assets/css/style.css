@@ -8,6 +8,7 @@ body {
 
 .sound-block {
   color: rgb(9, 88, 88);
+  text-align: right;
 }
 
 .wrapper {

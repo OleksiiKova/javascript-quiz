@@ -74,19 +74,17 @@ let questions = [{
         correct: 3,
     },
     {
-        question: "JavaScript ignores extra spaces",
-        answers: ["True", "False"],
-        correct: 1,
+        question: "How do you find the number with the highest value of x and y?",
+        answers: ["ceil(x, y)", "Math.max(x, y)", "top(x, y)", "Math.ceil(x, y)"],
+        correct: 2,
     },
     {
-        question: "Which is the correct way to write a JavaScript array?",
+        question: "JavaScript is the same as Java.",
         answers: [
-            "var txt = new Array(1:'arr',2:'kim',3:'jim')",
-            "var txt = new Array:1=('arr')2=('kim')3=('jim')",
-            "var txt = new Array('arr','kim','jim')",
-            "var txt = new Array='arr', 'kim', 'jim'"
+            "True",
+            "False"
         ],
-        correct: 3,
+        correct: 2,
     },
     {
         question: "Which of the following is the tainted property of a window object in Java Script?",
@@ -124,11 +122,6 @@ let questions = [{
         correct: 4,
     },
     {
-        question: " ___________ JavaScript is also called client-side JavaScript.",
-        answers: ["Microsoft", "Navigator", "LiveWire", "Native"],
-        correct: 2,
-    },
-    {
         question: "What language defines the behavior of a web page?",
         answers: ["HTML", "CSS", "XML", "Java Script"],
         correct: 4,
@@ -144,19 +137,19 @@ let questions = [{
         correct: 2,
     },
     {
-        question: "File is a server-side JavaScript object?",
-        answers: ["True", "False"],
-        correct: 1,
+        question: "How do you declare a JavaScript variable?",
+        answers: ["variable carName;", "v carName;", "var carName;"],
+        correct: 3,
     },
     {
         question: "What is the alternate name for Java script?",
-        answers: ["LimeScript", "Both LimeScript and ECMAScript", "ECMScript", "ECMAScript"],
+        answers: ["LimeScript", "Both LimeScript and ECMAScript", "EScript", "ECMAScript"],
         correct: 4,
     },
     {
-        question: "Which of the following is a client-side Java Script object?",
-        answers: ["File", "Function", "FileUpload", "Time"],
-        correct: 3,
+        question: "What will the following code return: Boolean(10 > 9)",
+        answers: ["false", "true", "NaN"],
+        correct: 2,
     },
     {
         question: "What java wrapper type is created when a JavaScript object is sent to Java?",
@@ -164,9 +157,9 @@ let questions = [{
         correct: 4,
     },
     {
-        question: "Is it possible to declare a variable in Java Script along its type?",
-        answers: ["Yes", "No"],
-        correct: 1,
+        question: "How to write an IF statement in JavaScript?",
+        answers: ["if i = 5", "if (i == 5)", "if i == 5 then", "if i = 5 then"],
+        correct: 2,
     },
     {
         question: "Which of the following method is used to evaluate a string of Java Script code in the context of the specified object?",
@@ -174,19 +167,19 @@ let questions = [{
         correct: 1,
     },
     {
-        question: "Java Script supports all boolean operators",
-        answers: ["True", "False"],
-        correct: 2,
+        question: "How do you call a function named 'myFunction'?",
+        answers: ["myFunction()", "call myFunction()", "call function myFunction()"],
+        correct: 1,
     },
     {
-        question: "Java Script entities start with ____________ and end with ______________",
+        question: "Java Script entities start with ____________ and end with ______________.",
         answers: ["Semicolon, colon", "Semicolon, Ampersand", "Ampersand, colon", "Ampersand, semicolon"],
         correct: 4,
     },
     {
-        question: "How to append a value to an array of Java Script?",
-        answers: ["arr[arr.length] = value", "arr[arr.length+1] = new Arrays()", "arr[arr.length-1] = value", "arr[arr.length*1] = value"],
-        correct: 1,
+        question: "How do you write 'Hello World' in an alert box?",
+        answers: ["msg('Hello World');", "alertBox('Hello World');", "alert(Hello World);", "alert('Hello World'); "],
+        correct: 4,
     },
     {
         question: "Javascript is a _____ language.",
@@ -194,9 +187,9 @@ let questions = [{
         correct: 3,
     },
     {
-        question: "JavaScript is a _____ Side Scripting Language.",
-        answers: ["Server", "Browser", "ISP", "None of the above"],
-        correct: 2,
+        question: "How can you detect the client's browser name?",
+        answers: ["browser.name", "client.navName", "navigator.appName"],
+        correct: 3,
     },
     {
         question: "Which of the following purpose, JavaScript is designed for ?",
@@ -209,12 +202,12 @@ let questions = [{
         correct: 1,
     },
     {
-        question: "JavaScript code is written inside file having extension",
+        question: "JavaScript code is written inside file having extension?",
         answers: [".jvs", ".js", ".jsc", ".javascript"],
         correct: 2,
     },
     {
-        question: "Why JavaScript is called as Lightweight Programming Language ?",
+        question: "Why JavaScript is called as Lightweight Programming Language?",
         answers: [
             "because JS is client side scripting",
             "because JS is available free of cost.",
@@ -224,33 +217,18 @@ let questions = [{
         correct: 4,
     },
     {
-        question: "JavaScript is also called as",
+        question: "JavaScript is also called as?",
         answers: ["Server Side Scripting Language", "Client Side Scripting Language", "All of the above", "None of the above"],
         correct: 2,
     },
-{
-        question: "Local Browser used for validations on the Web Pages uses",
-        answers: ["JS", "Java", "HTML", "CSS"],
-        correct: 1,
-    },
     {
-        question: "JavaScript code can be called by using",
+        question: "JavaScript code can be called by using?",
         answers: ["RMI", "Preprocessor", "Function / Method", "None of the above"],
         correct: 3,
     },
     {
-        question: "Which is correct about JavaScript?",
-        answers: ["JavaScript is an Object-Based language", "JavaScript is Assembly-language", "JavaScript is an Object-Oriented language", "JavaScript is a High-level language"],
-        correct: 1,
-    },
-    {
         question: "Arrays in JavaScript are defined by which of the following statements?",
         answers: ["It is an ordered list of values", "It is an ordered list of objects", "It is an ordered list of string", "It is an ordered list of functions"],
-        correct: 1,
-    },
-    {
-        question: "Which of the following object is the main entry point to all client-side JavaScript features and APIs?",
-        answers: ["Position", "Window", "Standard", "Location"],
         correct: 1,
     },
     {
@@ -259,23 +237,62 @@ let questions = [{
         correct: 2,
     },
     {
-        question: "When an empty statement is encountered, a JavaScript interpreter",
+        question: "When an empty statement is encountered, a JavaScript interpreter?",
         answers: ["Throws an exception", "Throws an error", "Prompts to complete the statement", "Ignores the statement"],
         correct: 4,
     },
     {
         question: "The 'var' and 'function' are",
         answers: ["Prototypes", " Datatypes", "Keywords", "Declaration statements"],
-        correct: 2,
+        correct: 4,
     },
     {
-        question: "Which attribute is used to specify that the script is executed when the page has finished parsing (only for external scripts)",
+        question: "Which attribute is used to specify that the script is executed when the page has finished parsing (only for external scripts)?",
         answers: ["type", "parse", "async", "defer"],
         correct: 4,
     },
     {
-        question: "Among the following, which one is a ternary operator ?",
+        question: "Among the following, which one is a ternary operator?",
         answers: ["?", "-", ":", "+"],
+        correct: 1,
+    },
+    {
+        question: "What is the purpose of the 'let' keyword in JavaScript?",
+        answers: ["To declare a constant variable.", "To declare a variable with block scope.", "To declare a global variable."],
+        correct: 2,
+    },
+    {
+        question: "What is the purpose of the 'addEventListener' method in JavaScript?",
+        answers: ["To add a CSS style to an element.", "To attach an event handler function to an element.", "To create a new HTML element."],
+        correct: 2,
+    },
+    {
+        question: "What is the DOM in the context of web development?",
+        answers: ["Document Object Model", "Data Object Model", "Design Object Model"],
+        correct: 1,
+    },
+    {
+        question: "How does the setTimeout function work in JavaScript?",
+        answers: [
+            "Delays the execution of a function for a specified number of milliseconds.",
+            "Sets a timer for the browser to refresh the page.",
+            "Pauses the script execution indefinitely."
+        ],
+        correct: 1,
+    },
+    {
+        question: "How do you iterate over elements in an array in JavaScript?",
+        answers: ["Using a 'for...in' loop.", "Using a 'for' loop.", "Using the 'forEach' method."],
+        correct: 3,
+    },
+    {
+        question: "Explain the concept of closure in JavaScript.",
+        answers: ["It refers to the process of closing a browser window.", "It's a function with access to variables from its outer (enclosing) scope.", "It's a way to close and open HTML tags."],
+        correct: 2,
+    },
+    {
+        question: "What is the purpose of the 'this' keyword in JavaScript?",
+        answers: ["Refers to the current HTML document.", "Refers to the current object in a method or function.", "Represents a placeholder for a future value."],
         correct: 1,
     },
 ];

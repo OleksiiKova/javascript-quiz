@@ -308,17 +308,16 @@ const popupChooseAnswer = document.querySelector(".popup-choose-answer");
 const nextBtn = document.querySelector(".quiz-button-next");
 
 
+// Function for choose random questions from array
+function getRandomQuestions(array, n) {
+    // Mix array
+    const shuffledArray = array.sort(() => Math.random() - 0.5);
+    // Choose first n elements
+    return shuffledArray.slice(0, n);
+}
 
-
-
-
-//     function () {
-//     if (confirm("Are you sure? All the progress will be lost!")) {
-//         history.go()
-//     } else {
-//         return
-//     }
-// };
+// Choose 10 random questions
+const randomQuestions = getRandomQuestions(questions, 10);
 
 function clearHtml() {
     quizQuestion.innerHTML = "";

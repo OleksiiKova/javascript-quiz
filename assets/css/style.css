@@ -29,7 +29,7 @@ body {
 }
 
 .nav_items a {
-  color: white;
+  color: rgb(150, 231, 231);
   text-decoration: none;
   font-size: 20px;
   font-weight: 500;
@@ -37,7 +37,7 @@ body {
 }
 
 .nav_items a:hover {
-  color: rgb(150, 231, 231);
+  color: white;
 }
 
 .nav_items ul {

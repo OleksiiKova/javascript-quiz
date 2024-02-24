@@ -575,6 +575,10 @@ function soundOff() {
     muteOff.classList.remove('hidden');
 };
 
+function redirectToQuizPage() {
+    window.location.href = 'quiz.html';
+}
+
 clearHtml()
 showQuestion()
 increaseQuestionOf();

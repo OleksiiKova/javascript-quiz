@@ -49,6 +49,22 @@ body {
   list-style-type: none;
 }
 
+.container {
+  color: white;
+}
+.intro {
+}
+.intro_title {
+}
+.intro_block {
+}
+.rules {
+}
+.rules_title {
+}
+.rules_block {
+}
+
 .title {
   text-align: center;
   margin: 40px 0;
@@ -110,7 +126,8 @@ body {
 .quiz-button-submit,
 .quiz-button-next,
 .quiz-button-reset,
-.quiz-button-finish {
+.quiz-button-finish,
+.start-quiz-btn {
   width: 150px;
   padding: 10px;
   font-size: 16px;
@@ -123,7 +140,8 @@ body {
 
 .quiz-button-submit:hover,
 .quiz-button-next:hover,
-.quiz-button-reset:hover {
+.quiz-button-reset:hover,
+.start-quiz-btn:hover {
   color: rgb(150, 231, 231);
 }
 

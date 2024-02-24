@@ -34,7 +34,7 @@ let questions = [{
         correct: 4,
     },
     {
-        question: "How do you round the number 7.25, to the nearest integer?",
+        question: "How do you round the number 7.25 to the nearest integer?",
         answers: ["math.Round(7.25)", "round(7.25)", "Math.rnd(7.25)", "Math.round(7.25)"],
         correct: 4
     },
@@ -192,7 +192,7 @@ let questions = [{
         correct: 3,
     },
     {
-        question: "Which of the following purpose, JavaScript is designed for ?",
+        question: "Which of the following purpose, JavaScript is designed for?",
         answers: ["To Execute Query Related to DB on Server", "To Style HTML Pages", "To Perform Server Side Scripting Opertion", "To add interactivity to HTML Pages."],
         correct: 4,
     },
@@ -242,7 +242,7 @@ let questions = [{
         correct: 4,
     },
     {
-        question: "The 'var' and 'function' are",
+        question: "The 'var' and 'function' are?",
         answers: ["Prototypes", " Datatypes", "Keywords", "Declaration statements"],
         correct: 4,
     },
@@ -308,16 +308,7 @@ const popupChooseAnswer = document.querySelector(".popup-choose-answer");
 const nextBtn = document.querySelector(".quiz-button-next");
 
 
-// Function for choose random questions from array
-function getRandomQuestions(array, n) {
-    // Mix array
-    const shuffledArray = array.sort(() => Math.random() - 0.5);
-    // Choose first n elements
-    return shuffledArray.slice(0, n);
-}
 
-// Choose 10 random questions
-const randomQuestions = getRandomQuestions(questions, 10);
 
 function clearHtml() {
     quizQuestion.innerHTML = "";
@@ -329,14 +320,27 @@ function clearHtml() {
     document.querySelector(".quiz-buttons").classList.remove('show-easy');
 };
 
+
+// Function for choose random questions from array
+function getRandomQuestions(array, n) {
+    // Shuffle array
+    const shuffledArray = array.sort(() => Math.random() - 0.5);
+    // Choose first n elements
+    return shuffledArray.slice(0, n);
+}
+
+// Choose 10 random questions
+const randomQuestions = getRandomQuestions(questions, 5);
+
+
 function showQuestion() {
     // Create variable with question
     const questionTemplate = `<h2 class = "quiz-title">%question%</h2>`;
-    const questionTitle = questionTemplate.replace('%question%', questions[questionNumber]["question"])
+    const questionTitle = questionTemplate.replace('%question%', randomQuestions[questionNumber]["question"])
     quizQuestion.innerHTML = questionTitle;
 
     // Create variable with answers
-    for ([index, item] of questions[questionNumber]["answers"].entries()) {
+    for ([index, item] of randomQuestions[questionNumber]["answers"].entries()) {
         const answersTemplate =
             `<li class="quiz-answers-item">
                 <label>
@@ -354,7 +358,7 @@ function showQuestion() {
 function increaseQuestionOf() {
     let quizQuestionOf = document.querySelector(".quiz-question-of");
     let numberOfQuestion = questionNumber + 1;
-    quizQuestionOf.innerHTML = `Question ${numberOfQuestion} of ${questions.length}`;
+    quizQuestionOf.innerHTML = `Question ${numberOfQuestion} of ${randomQuestions.length}`;
 }
 
 function checkAnswer() {
@@ -376,7 +380,7 @@ function checkAnswer() {
 
     // Get the user's answer
     let userAnswer = parseInt(checkedRadio.value);
-    let correctAnswer = questions[questionNumber]['correct'];
+    let correctAnswer = randomQuestions[questionNumber]['correct'];
 
     // Add disabled attribute to the inputs after press submit
     document.querySelectorAll('input[type="radio"]').forEach(function (disableRadioButton) {
@@ -419,7 +423,7 @@ function checkAnswer() {
     resetBtn.classList.add('hidden');
 
     // Check is this the last question? 
-    if (questionNumber !== questions.length - 1) {
+    if (questionNumber !== randomQuestions.length - 1) {
         questionNumber++;
         nextBtn.onclick = function () {
             clearHtml();
@@ -461,13 +465,13 @@ function showResults() {
 
     // Answer options based on test results
     let title, message;
-    if (score === questions.length) {
+    if (score === randomQuestions.length) {
         title = 'Congratulations!';
         message = "You've answered all the questions correctly!";
-    } else if ((score * 100) / questions.length >= 50) {
+    } else if ((score * 100) / randomQuestions.length >= 50) {
         title = 'Well done!';
         message = "You have good knowledge about JS!";
-    } else if ((score * 100) / questions.length >= 30) {
+    } else if ((score * 100) / randomQuestions.length >= 30) {
         title = 'Not bad...';
         message = 'But, there is still lots of space for improvement!';
     } else {
@@ -475,7 +479,7 @@ function showResults() {
         message = 'Learn the theory and try again!';
     };
 
-    let result = `Correct ${score} of ${questions.length} answers!`;
+    let result = `Correct ${score} of ${randomQuestions.length} answers!`;
 
     let resultsMessage = resultsTemplate
         .replace('%title%', title)
@@ -502,7 +506,7 @@ function hideChooseAnswer() {
 
 // Pop-up are you sure to start again
 document.querySelector(".modal-start-again-btn-cancel").onclick = hideStartAgain;
-document.querySelector(".close-btn-again").onclick = hideStartAgain;
+// document.querySelector(".close-btn-again").onclick = hideStartAgain;
 document.querySelector(".modal-start-again-btn-ok").onclick = restart;
 
 function restart() {

@@ -320,6 +320,7 @@ li {
 
 .feedback_title {
   text-align: center;
+  margin: 16px 0;
 }
 
 .feedback_text {
@@ -460,7 +461,7 @@ li {
 
   .title {
     font-size: 24px;
-    margin: 20px 0;
+    margin: 16px 0;
   }
 
   .quiz_title {

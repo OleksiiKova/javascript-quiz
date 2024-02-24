@@ -300,12 +300,12 @@ let questions = [{
 let score = 0;
 let questionNumber = 0;
 
-const quizQuestion = document.querySelector(".quiz-question");
-const listAnswers = document.querySelector(".quiz-answers-list");
+const quizQuestion = document.querySelector(".quiz_question");
+const listAnswers = document.querySelector(".quiz_answers_list");
 const resultsContainer = document.querySelector(".results_container");
-const resetBtn = document.querySelector(".quiz-button-reset");
-const popupChooseAnswer = document.querySelector(".popup-choose-answer");
-const nextBtn = document.querySelector(".quiz-button-next");
+const resetBtn = document.querySelector(".quiz_button_reset");
+const popupChooseAnswer = document.querySelector(".popup_choose_answer");
+const nextBtn = document.querySelector(".quiz_button_next");
 
 
 
@@ -314,10 +314,10 @@ function clearHtml() {
     quizQuestion.innerHTML = "";
     listAnswers.innerHTML = "";
     resultsContainer.innerHTML = "";
-    // if (document.querySelector(".quiz-button-next")) {
-    //     document.querySelector(".quiz-button-next").classList.add('hidden')
+    // if (document.querySelector(".quiz_button_next")) {
+    //     document.querySelector(".quiz_button_next").classList.add('hidden')
     // };
-    document.querySelector(".quiz-buttons").classList.remove('show-easy');
+    document.querySelector(".quiz_buttons").classList.remove('show-easy');
 };
 
 
@@ -335,16 +335,16 @@ const randomQuestions = getRandomQuestions(questions, 5);
 
 function showQuestion() {
     // Create variable with question
-    const questionTemplate = `<h2 class = "quiz-title">%question%</h2>`;
+    const questionTemplate = `<h2 class = "quiz_title">%question%</h2>`;
     const questionTitle = questionTemplate.replace('%question%', randomQuestions[questionNumber]["question"])
     quizQuestion.innerHTML = questionTitle;
 
     // Create variable with answers
     for ([index, item] of randomQuestions[questionNumber]["answers"].entries()) {
         const answersTemplate =
-            `<li class="quiz-answers-item">
+            `<li class="quiz_answers_item">
                 <label>
-                    <input value="%num%" type="radio" name="quiz-answers" />
+                    <input value="%num%" type="radio" name="quiz_answers" />
                     %answer%
                 </label>
             </li>`;
@@ -356,7 +356,7 @@ function showQuestion() {
 }
 
 function increaseQuestionOf() {
-    let quizQuestionOf = document.querySelector(".quiz-question-of");
+    let quizQuestionOf = document.querySelector(".quiz_question_of");
     let numberOfQuestion = questionNumber + 1;
     quizQuestionOf.innerHTML = `Question ${numberOfQuestion} of ${randomQuestions.length}`;
 }
@@ -369,12 +369,12 @@ function checkAnswer() {
     if (!checkedRadio) {
         // Show pop-up window with text "Select answer"
         showChooseAnswer();
-        if (document.querySelector('.sound-off').classList.contains("hidden")) {
+        if (document.querySelector('.sound_off').classList.contains("hidden")) {
             playNotificationSound();
         };
         // Hide pop-up window with text Choose answer
-        document.querySelector(".modal-choose-answer-btn").onclick = hideChooseAnswer;
-        document.querySelector(".close-btn").onclick = hideChooseAnswer;
+        document.querySelector(".modal_choose_answer_btn").onclick = hideChooseAnswer;
+        document.querySelector(".close_btn").onclick = hideChooseAnswer;
 
     };
 
@@ -388,32 +388,32 @@ function checkAnswer() {
     });
 
     // Add animation after press submit
-    document.querySelector(".selected").className += " selected-blink";
+    document.querySelector(".selected").className += " selected_blink";
     setTimeout(() => {
-        document.querySelector(".selected").classList.remove("selected-blink");
-        document.querySelector(".score-correct-answer").innerHTML = score;
-        document.querySelector(".quiz-button-next").classList.remove('hidden');
-        document.querySelector(".quiz-button-reset").classList.remove('hidden');
-        document.querySelector(".quiz-buttons").classList.add('show-easy');
+        document.querySelector(".selected").classList.remove("selected_blink");
+        document.querySelector(".score_correct_answer").innerHTML = score;
+        document.querySelector(".quiz_button_next").classList.remove('hidden');
+        document.querySelector(".quiz_button_reset").classList.remove('hidden');
+        document.querySelector(".quiz_buttons").classList.add('show-easy');
     }, 1500);
 
     // Compare user's and correct answers
     if (userAnswer === correctAnswer) {
         score++;
-        document.querySelector(".selected").classList.add("selected-correct");
+        document.querySelector(".selected").classList.add("selected_correct");
         setTimeout(() => {
-            if (document.querySelector('.sound-off').classList.contains("hidden")) {
+            if (document.querySelector('.sound_off').classList.contains("hidden")) {
                 playCorrectSound();
             };
         }, 1200);
 
     } else {
         setTimeout(() => {
-            document.querySelector(".selected").classList.add("selected-wrong");
+            document.querySelector(".selected").classList.add("selected_wrong");
             let correctInput = document.querySelector('input[value="' + correctAnswer + '"]');
-            correctInput.parentNode.parentNode.classList.add('selected-correct');
+            correctInput.parentNode.parentNode.classList.add('selected_correct');
 
-            if (document.querySelector('.sound-off').classList.contains("hidden")) {
+            if (document.querySelector('.sound_off').classList.contains("hidden")) {
                 playWrongSound();
             };
         }, 1500);
@@ -434,14 +434,14 @@ function checkAnswer() {
         };
     } else {
         setTimeout(() => {
-            document.querySelector(".quiz-button-reset").classList.remove('hidden');
+            document.querySelector(".quiz_button_reset").classList.remove('hidden');
             nextBtn.outerHTML =
                 `
-                <button class="quiz-button-finish" type="button">
+                <button class="quiz_button_finish" type="button">
                  Get results
                 </button>
                 `
-            document.querySelector(".quiz-button-finish").onclick = function () {
+            document.querySelector(".quiz_button_finish").onclick = function () {
                 clearHtml();
                 showResults();
             }
@@ -451,11 +451,11 @@ function checkAnswer() {
 
 
 function showResults() {
-    document.querySelector(".block-score-questionof").outerHTML = " ";
-    document.querySelector(".quiz-answers").outerHTML = " ";
-    document.querySelector(".quiz-button-reset").outerHTML = " ";
-    document.querySelector(".quiz-buttons").className += ' play-again';
-    // document.querySelector(".quiz-button-finish").outerHTML = " ";
+    document.querySelector(".block_score_questionof").outerHTML = " ";
+    document.querySelector(".quiz_answers").outerHTML = " ";
+    document.querySelector(".quiz_button_reset").outerHTML = " ";
+    document.querySelector(".quiz_buttons").className += ' play_again';
+    // document.querySelector(".quiz_button_finish").outerHTML = " ";
 
     let resultsTemplate = `
         <h2 class="results-title">%title%</h2>
@@ -488,8 +488,8 @@ function showResults() {
 
     resultsContainer.innerHTML = resultsMessage;
 
-    document.querySelector(".quiz-button-finish").innerText = "Play again";
-    document.querySelector(".quiz-button-finish").onclick = function () {
+    document.querySelector(".quiz_button_finish").innerText = "Play again";
+    document.querySelector(".quiz_button_finish").onclick = function () {
         history.go()
     };
 };
@@ -497,31 +497,31 @@ function showResults() {
 
 // Pop-up choose answer
 function showChooseAnswer() {
-    popupChooseAnswer.className += " popup-visible";
+    popupChooseAnswer.className += " popup_visible";
 };
 
 function hideChooseAnswer() {
-    popupChooseAnswer.classList.remove("popup-visible");
+    popupChooseAnswer.classList.remove("popup_visible");
 };
 
 // Pop-up are you sure to start again
-document.querySelector(".modal-start-again-btn-cancel").onclick = hideStartAgain;
-// document.querySelector(".close-btn-again").onclick = hideStartAgain;
-document.querySelector(".modal-start-again-btn-ok").onclick = restart;
+document.querySelector(".modal_start_again_btn_cancel").onclick = hideStartAgain;
+// document.querySelector(".close_btn_again").onclick = hideStartAgain;
+document.querySelector(".modal_start_again_btn_ok").onclick = restart;
 
 function restart() {
     location.reload();
 }
 
 function showStartAgain() {
-    document.querySelector(".popup-start-again").className += " popup-visible";
-    if (document.querySelector('.sound-off').classList.contains("hidden")) {
+    document.querySelector(".popup_start_again").className += " popup_visible";
+    if (document.querySelector('.sound_off').classList.contains("hidden")) {
         playNotificationSound();
     };
 };
 
 function hideStartAgain() {
-    document.querySelector(".popup-start-again").classList.remove("popup-visible");
+    document.querySelector(".popup_start_again").classList.remove("popup_visible");
 };
 
 function selectedRadio() {
@@ -560,8 +560,8 @@ function playNotificationSound() {
 
 
 
-let muteOff = document.querySelector('.sound-off');
-let muteOn = document.querySelector('.sound-on');
+let muteOff = document.querySelector('.sound_off');
+let muteOn = document.querySelector('.sound_on');
 muteOff.onclick = soundOn;
 muteOn.onclick = soundOff;
 
@@ -592,12 +592,12 @@ function selectAnswer() {
         if (!checkedRadio) {
             // Show pop-up window with text "Select answer"
             showChooseAnswer();
-            if (document.querySelector('.sound-off').classList.contains("hidden")) {
+            if (document.querySelector('.sound_off').classList.contains("hidden")) {
                 playNotificationSound();
             };
             // Hide pop-up window with text Choose answer
-            document.querySelector(".modal-choose-answer-btn").onclick = hideChooseAnswer;
-            document.querySelector(".close-btn").onclick = hideChooseAnswer;
+            document.querySelector(".modal_choose_answer_btn").onclick = hideChooseAnswer;
+            document.querySelector(".close_btn").onclick = hideChooseAnswer;
 
         };
     }

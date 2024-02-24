@@ -13,9 +13,9 @@
 
   <body>
     <div class="wrapper">
-      <div class="menu-container">
-        <div class="burger-block">
-          <div class="burger-menu" onclick="toggleMenu()">
+      <div class="menu_container">
+        <div class="burger_block">
+          <div class="burger_menu" onclick="toggleMenu()">
             <div class="bar"></div>
             <div class="bar"></div>
             <div class="bar"></div>
@@ -45,31 +45,37 @@
           Have you found a mistake or do you have suggestions on how the site
           can be improved? Please let me know. Your feedback is important to us.
         </p>
-        <form class="feedback-form" action="" method="post">
-          <div class="feedback-contact-data">
+        <form
+          id="my"
+          class="feedback_form"
+          action="https://formdump.codeinstitute.net"
+          method="post"
+        >
+          <div class="feedback_contact_data">
             <input
-              class="feedback-name"
+              class="feedback_name"
               type="text"
               id="name"
               placeholder="Your name:"
+              name="name"
             />
             <input
-              class="feedback-email"
+              class="feedback_email"
               type="email"
               id="email"
               placeholder="Your email:"
+              name="email"
             />
           </div>
-          <div class="feedback-input">
+          <div class="feedback_input">
             <textarea
-              class="feedback-textarea"
-              name=""
-              id=""
+              class="feedback_textarea"
               cols="30"
               rows="10"
+              name="message"
             ></textarea>
           </div>
-          <div class="feedback-buttons">
+          <div class="feedback_buttons">
             <button class="reset_btn" type="reset">Clear</button>
             <button class="submit_btn" type="submit">Submit</button>
           </div>

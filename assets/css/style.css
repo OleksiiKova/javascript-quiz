@@ -356,6 +356,18 @@ li {
     transform: translateY(0);
   }
 
+  .intro_title {
+    font-size: 24px;
+  }
+
+  .rules_title {
+    font-size: 20px;
+  }
+
+  .rules-list li {
+    padding: 4px;
+  }
+
   .container {
     width: auto;
     padding: 0 20px;

@@ -273,7 +273,6 @@ li {
 }
 
 @keyframes blink {
-
   0%,
   100% {
     background-color: rgb(150, 231, 231);
@@ -304,7 +303,6 @@ li {
 
 /* Media query: phone 300-767px width*/
 @media screen and (max-width: 767px) {
-
   /*            Burger menu                */
   .burger-menu {
     cursor: pointer;
@@ -316,6 +314,10 @@ li {
     position: relative;
     z-index: 2;
     overflow: hidden;
+  }
+
+  .menu-container {
+    padding: 10px;
   }
 
   .bar {

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Quiz</title>
+    <!-- Meta tags for search engines -->
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/favicon/icons8-quiz-16.png" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="menu-container">
+        <div class="burger-block">
+          <div class="burger-menu" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
+        </div>
+        <div class="nav">
+          <ul>
+            <li class="nav_item">
+              <a href="index.html">Home</a>
+            </li>
+          </ul>
+          <ul>
+            <li class="nav_item">
+              <a href="quiz.html">Quiz</a>
+            </li>
+          </ul>
+          <ul>
+            <li class="nav_item">
+              <a id="active" href="feedback.html">Feedback</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="feedback_container">
+        <h2 class="feedback_title">Feedback!</h2>
+        <p class="feedback_text">
+          Have you found a mistake or do you have suggestions on how the site
+          can be improved? Please let me know. Your feedback is important to us.
+        </p>
+        <form class="feedback-form" action="" method="post">
+          <div class="feedback-contact-data">
+            <input
+              class="feedback-name"
+              type="text"
+              id="name"
+              placeholder="Your name:"
+            />
+            <input
+              class="feedback-email"
+              type="email"
+              id="email"
+              placeholder="Your email:"
+            />
+          </div>
+          <div class="feedback-input">
+            <textarea
+              class="feedback-textarea"
+              name=""
+              id=""
+              cols="30"
+              rows="10"
+            ></textarea>
+          </div>
+          <div class="feedback-buttons">
+            <button class="reset_btn" type="reset">Clear</button>
+            <button class="submit_btn" type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Font awesome kit -->
+    <script
+      src="https://kit.fontawesome.com/1e754c32b5.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>

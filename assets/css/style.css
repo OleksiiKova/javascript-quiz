@@ -65,7 +65,8 @@ body {
   text-align: center;
 }
 
-.intro p {
+.intro p,
+.feedback_container p {
   text-align: justify;
   text-indent: 20px;
 }
@@ -157,7 +158,9 @@ body {
 .quiz-button-next,
 .quiz-button-reset,
 .quiz-button-finish,
-.start-quiz-btn {
+.start-quiz-btn,
+.reset_btn,
+.submit_btn {
   width: 150px;
   padding: 10px;
   font-size: 16px;
@@ -171,7 +174,9 @@ body {
 .quiz-button-submit:hover,
 .quiz-button-next:hover,
 .quiz-button-reset:hover,
-.start-quiz-btn:hover {
+.start-quiz-btn:hover,
+.reset_btn:hover,
+.submit_btn:hover {
   color: rgb(150, 231, 231);
 }
 
@@ -307,6 +312,73 @@ li {
   }
 }
 
+/* -----------------Feedback page----------------- */
+
+.feedback_container {
+  color: white;
+  margin: 0 auto;
+  width: 400px;
+}
+
+.feedback_title {
+  text-align: center;
+}
+
+.feedback_text {
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 400px;
+  margin: 0 auto;
+}
+
+.feedback-textarea {
+  width: 100%;
+  padding: 12px 12px;
+}
+
+.feedback-textarea,
+.feedback-name,
+.feedback-email {
+  font-size: 20px;
+  background-color: rgb(150, 231, 231);
+  padding-left: 12px;
+  padding-right: 12px;
+  border: rgb(9, 88, 88) solid 2px;
+  border-radius: 5px;
+  color: rgb(3, 27, 27);
+  margin-bottom: 16px;
+}
+
+.feedback-textarea {
+  margin-bottom: 16px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.feedback-buttons {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-self: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.feedback-contact-data {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-self: center;
+}
+
 /* Media query: phone 300-767px width*/
 @media screen and (max-width: 767px) {
   /*            Burger menu                */
@@ -323,7 +395,7 @@ li {
   }
 
   .menu-container {
-    padding: 10px;
+    padding: 12px;
   }
 
   .bar {
@@ -427,6 +499,21 @@ li {
   .block-score-questionof {
     text-align: center;
     font-size: 14px;
+  }
+
+  /* Feedback page */
+
+  .feedback_container {
+    width: auto;
+    padding: 0 10px;
+    max-width: 400px;
+  }
+  .feedback-form {
+    width: auto;
+  }
+
+  .feedback-buttons {
+    justify-content: center;
   }
 }
 

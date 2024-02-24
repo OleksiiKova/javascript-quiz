@@ -17,7 +17,7 @@
         <div class="nav_items">
           <ul>
             <li class="nav_item">
-              <a href="index.html">Main</a>
+              <a id="active" href="index.html">Main</a>
             </li>
           </ul>
           <ul>
@@ -40,33 +40,40 @@
         <div class="rules">
           <h2 class="rules_title">To find out this, try this quiz!</h2>
           <div class="rules_block">
-            <ul>
+            <ul class="rules-list">
               <li>
-                The quiz consists of the ten questions. Each time you try, the
-                questions will be different.
+                The quiz consists of ten questions. Each time you attempt the
+                quiz, the questions will vary.
               </li>
               <li>
-                To answer a question, you just need to click on one of the
-                answer options.
+                To answer a question, simply click on one of the provided
+                options.
               </li>
               <li>
-                If your answer is correct - the line will be highlighted in
-                green. If the answer is incorrect, 2 lines will be highlighted.
-                The wrong answer is in red, and the correct answer is in green.
+                If your answer is correct, the line will be highlighted in
+                green. In case of an incorrect answer, two lines will be
+                highlighted - the incorrect answer in red and the correct answer
+                in green.
               </li>
-              After answering the 10 questions you will get your result,
-              depending on the number of correct answers.
-              <li>To start over click on the button "Start again".</li>
               <li>
-                You can turn on the sound by clicking on the icon
+                After completing all 10 questions, you will receive your result
+                based on the number of correct answers.
+              </li>
+              <li>To start over, click the "Start again".</li>
+              <li>
+                You can enable sound by clicking on the icon
                 <i class="fa-solid fa-volume-xmark"></i> in the upper right
                 corner.
               </li>
             </ul>
           </div>
         </div>
+        <div class="btn-block">
+          <button class="start-quiz-btn" onclick="redirectToQuizPage()">
+            Start quiz
+          </button>
+        </div>
       </div>
-      <button class="start-quiz-btn" onclick="redirectToQuizPage()">Start quiz</button>
     </div>
     <!-- Font awesome kit -->
     <script

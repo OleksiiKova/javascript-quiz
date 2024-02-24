@@ -6,14 +6,7 @@ body {
   font-family: Montserrat;
 }
 
-.sound-block {
-  color: rgb(9, 88, 88);
-  text-align: right;
-}
-
 .wrapper {
-  margin: 0 auto;
-  width: 1100px;
   /* display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,15 +14,24 @@ body {
   height: 100vh; */
 }
 
-/*      Main Page     */
+/* ----------------------------------Nav menu----------------------------*/
+.nav {
+  background-color: rgb(9, 88, 88);
+  margin-bottom: 40px;
+  /* width: 100%; */
+}
 
 .nav_items {
   display: flex;
   justify-content: center;
 }
 
+#active {
+  text-decoration: underline;
+}
+
 .nav_items a {
-  color: rgb(150, 231, 231);
+  color: white;
   text-decoration: none;
   font-size: 20px;
   font-weight: 500;
@@ -37,11 +39,11 @@ body {
 }
 
 .nav_items a:hover {
-  color: white;
+  color: rgb(150, 231, 231);
 }
 
 .nav_items ul {
-  padding: 0 20px;
+  padding: 0 40px;
   text-align: center;
 }
 
@@ -49,20 +51,41 @@ body {
   list-style-type: none;
 }
 
+/* ----------------------------------Main Page----------------------------------*/
+
 .container {
   color: white;
+  margin: 0 auto;
+  width: 760px;
 }
-.intro {
-}
-.intro_title {
-}
-.intro_block {
-}
-.rules {
-}
+
+.intro_title,
 .rules_title {
+  text-align: center;
 }
-.rules_block {
+
+.rules-list {
+  padding: 0 20px;
+}
+
+.rules-list li {
+  padding: 10px 0;
+}
+
+.rules {
+  margin-bottom: 40px;
+}
+
+.btn-block {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/*----------------------------------Quiz page----------------------------------*/
+
+.sound-block {
+  color: rgb(9, 88, 88);
+  text-align: right;
 }
 
 .title {
@@ -253,6 +276,7 @@ li {
   100% {
     background-color: rgb(150, 231, 231);
   }
+
   50% {
     background-color: rgb(162, 175, 175);
   }
@@ -270,6 +294,7 @@ li {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
@@ -277,6 +302,15 @@ li {
 
 /* Media query: phone 300-767px width*/
 @media screen and (max-width: 767px) {
+  .nav_items ul {
+    padding: 0 20px;
+  }
+
+  .container {
+    width: auto;
+    padding: 0 20px;
+  }
+
   .quiz {
     width: auto;
     margin: 10px;

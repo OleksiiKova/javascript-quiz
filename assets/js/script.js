@@ -577,14 +577,12 @@ function soundOff() {
 
 function redirectToQuizPage() {
     window.location.href = 'quiz.html';
-}
+};
 
-clearHtml()
-showQuestion()
-increaseQuestionOf();
-selectedRadio();
-resetBtn.onclick = showStartAgain;
-selectAnswer();
+function toggleMenu() {
+    const navMenu = document.querySelector('.nav');
+    navMenu.classList.toggle('show');
+};
 
 function selectAnswer() {
     nextBtn.onclick = function () {
@@ -604,3 +602,11 @@ function selectAnswer() {
         };
     }
 };
+
+clearHtml()
+showQuestion()
+increaseQuestionOf();
+selectedRadio();
+resetBtn.onclick = showStartAgain;
+selectAnswer();
+

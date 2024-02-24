@@ -15,13 +15,8 @@ body {
 }
 
 /* ----------------------------------Nav menu----------------------------*/
-.nav {
-  background-color: rgb(9, 88, 88);
-  margin-bottom: 40px;
-  /* width: 100%; */
-}
 
-.nav_items {
+.nav {
   display: flex;
   justify-content: center;
 }
@@ -30,25 +25,31 @@ body {
   text-decoration: underline;
 }
 
-.nav_items a {
+.nav a {
   color: white;
   text-decoration: none;
   font-size: 20px;
   font-weight: 500;
-  letter-spacing: 2px;
+  letter-spacing: 5px;
 }
 
-.nav_items a:hover {
+.nav a:hover {
   color: rgb(150, 231, 231);
 }
 
-.nav_items ul {
+.nav ul {
   padding: 0 40px;
   text-align: center;
+  margin: 0;
 }
 
 .nav_item {
   list-style-type: none;
+}
+
+.menu-container {
+  padding: 20px;
+  background-color: rgb(9, 88, 88);
 }
 
 /* ----------------------------------Main Page----------------------------------*/
@@ -168,7 +169,7 @@ body {
   color: rgb(150, 231, 231);
 }
 
-/*               Pop-up windows start again and choose answer              */
+/*----------------Pop-up windows start again and choose answer--------------*/
 
 /* Hide the main content, when pop-up is active */
 .popup-choose-answer,
@@ -272,6 +273,7 @@ li {
 }
 
 @keyframes blink {
+
   0%,
   100% {
     background-color: rgb(150, 231, 231);
@@ -302,8 +304,54 @@ li {
 
 /* Media query: phone 300-767px width*/
 @media screen and (max-width: 767px) {
-  .nav_items ul {
-    padding: 0 20px;
+
+  /*            Burger menu                */
+  .burger-menu {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+  }
+
+  .bar {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+  }
+
+  .burger-block {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 0;
+    transform: translateY(-100%);
+    transition: transform 0.5s;
+    background-color: rgb(9, 88, 88);
+  }
+
+  .nav li {
+    padding: 30px 0;
+  }
+
+  .nav a {
+    letter-spacing: 7px;
+  }
+
+  .nav.show {
+    transform: translateY(0);
   }
 
   .container {
@@ -319,6 +367,7 @@ li {
 
   .title {
     font-size: 24px;
+    margin: 20px 0;
   }
 
   .quiz-title {

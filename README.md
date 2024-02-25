@@ -80,4 +80,4 @@ I used a palette of such colours.
 
   - The form allows you to leave feedback or suggestions on how the site can be improved. This is crucial, as any identified errors can be corrected promptly. 
 
-  ![The Contact page](readme_images/feedback.png.png)
+  ![Feedback](readme_images/feedback.png)

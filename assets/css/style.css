@@ -7,7 +7,9 @@ body {
 }
 
 .quiz_answers label,
-.quiz_answers input {
+.quiz_answers input,
+.sound_off,
+.sound_on {
   cursor: pointer;
 }
 

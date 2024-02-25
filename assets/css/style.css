@@ -158,8 +158,7 @@ body {
 .quiz_button_reset,
 .quiz_button_finish,
 .start_quiz_btn,
-.reset_btn,
-.submit_btn {
+.reset_btn {
   width: 150px;
   padding: 10px;
   font-size: 16px;
@@ -174,7 +173,7 @@ body {
 .quiz_button_reset:hover,
 .start_quiz_btn:hover,
 .reset_btn:hover,
-.submit_btn:hover {
+.quiz_button_finish:hover {
   color: rgb(150, 231, 231);
 }
 

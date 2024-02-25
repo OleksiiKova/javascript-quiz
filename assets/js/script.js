@@ -303,25 +303,26 @@ let questionNumber = 0;
 const quizQuestion = document.querySelector(".quiz_question");
 const listAnswers = document.querySelector(".quiz_answers_list");
 const resultsContainer = document.querySelector(".results_container");
-const resetBtn = document.querySelector(".quiz_button_reset");
 const popupChooseAnswer = document.querySelector(".popup_choose_answer");
+const popupStartAgain = document.querySelector(".popup_start_again");
+const resetBtn = document.querySelector(".quiz_button_reset");
 const nextBtn = document.querySelector(".quiz_button_next");
+const quizBtns = document.querySelector(".quiz_buttons");
+const soundOffIcon = document.querySelector('.sound_off');
+const soundOnIcon = document.querySelector('.sound_on');
 
 
 
-
+/**Clears page content before each question */
 function clearHtml() {
     quizQuestion.innerHTML = "";
     listAnswers.innerHTML = "";
     resultsContainer.innerHTML = "";
-    // if (document.querySelector(".quiz_button_next")) {
-    //     document.querySelector(".quiz_button_next").classList.add('hidden')
-    // };
-    document.querySelector(".quiz_buttons").classList.remove('show-easy');
+    quizBtns.classList.remove('show-easy');
 };
 
 
-// Function for choose random questions from array
+/**Function for choose random questions from array */
 function getRandomQuestions(array, n) {
     // Shuffle array
     const shuffledArray = array.sort(() => Math.random() - 0.5);
@@ -329,11 +330,13 @@ function getRandomQuestions(array, n) {
     return shuffledArray.slice(0, n);
 }
 
-// Choose 10 random questions
-const randomQuestions = getRandomQuestions(questions, 5);
+//Choose 10 random questions
+const randomQuestions = getRandomQuestions(questions, 10);
 
 
+/**Create question and answers from array and put them in HTML */
 function showQuestion() {
+
     // Create variable with question
     const questionTemplate = `<h2 class = "quiz_title">%question%</h2>`;
     const questionTitle = questionTemplate.replace('%question%', randomQuestions[questionNumber]["question"])
@@ -348,81 +351,89 @@ function showQuestion() {
                     %answer%
                 </label>
             </li>`;
-        let answerText = answersTemplate
+        const answerText = answersTemplate
             .replace('%answer%', item)
             .replace('%num%', index + 1);
         listAnswers.innerHTML += answerText;
     }
 }
 
+
+
+/**Definition of a sequential question */
 function increaseQuestionOf() {
     let quizQuestionOf = document.querySelector(".quiz_question_of");
     let numberOfQuestion = questionNumber + 1;
     quizQuestionOf.innerHTML = `Question ${numberOfQuestion} of ${randomQuestions.length}`;
 }
 
+
+
+/**Check Answer (is correct? Is last?) */
 function checkAnswer() {
 
-    let checkedRadio = listAnswers.querySelector("input:checked");
+    ifAnswerCorrect();
 
-    // If an answer is not selected the function exits
-    if (!checkedRadio) {
-        // Show pop-up window with text "Select answer"
-        showChooseAnswer();
-        if (document.querySelector('.sound_off').classList.contains("hidden")) {
-            playNotificationSound();
-        };
-        // Hide pop-up window with text Choose answer
-        document.querySelector(".modal_choose_answer_btn").onclick = hideChooseAnswer;
-        document.querySelector(".close_btn").onclick = hideChooseAnswer;
-
-    };
-
-    // Get the user's answer
-    let userAnswer = parseInt(checkedRadio.value);
-    let correctAnswer = randomQuestions[questionNumber]['correct'];
-
-    // Add disabled attribute to the inputs after press submit
+    // Add disabled attribute to the all inputs after choose answer
     document.querySelectorAll('input[type="radio"]').forEach(function (disableRadioButton) {
         disableRadioButton.disabled = true;
     });
 
-    // Add animation after press submit
+    //Hide buttons Next and Start Again after choose answer
+    nextBtn.classList.add('hidden');
+    resetBtn.classList.add('hidden');
+
+    // Add animation after choose answer
     document.querySelector(".selected").className += " selected_blink";
     setTimeout(() => {
         document.querySelector(".selected").classList.remove("selected_blink");
         document.querySelector(".score_correct_answer").innerHTML = score;
-        document.querySelector(".quiz_button_next").classList.remove('hidden');
-        document.querySelector(".quiz_button_reset").classList.remove('hidden');
-        document.querySelector(".quiz_buttons").classList.add('show-easy');
+        nextBtn.classList.remove('hidden');
+        resetBtn.classList.remove('hidden');
+        quizBtns.classList.add('show-easy');
     }, 1500);
 
-    // Compare user's and correct answers
+    checkIsLastQuestion()
+};
+
+
+/**Compare user's and correct answers */
+function ifAnswerCorrect() {
+    // Get the user's answer
+    let checkedRadio = listAnswers.querySelector("input:checked");
+    let userAnswer = parseInt(checkedRadio.value);
+    // Get the correct answer
+    let correctAnswer = randomQuestions[questionNumber]['correct'];
+
+    //if user's answer is correct
     if (userAnswer === correctAnswer) {
         score++;
         document.querySelector(".selected").classList.add("selected_correct");
         setTimeout(() => {
-            if (document.querySelector('.sound_off').classList.contains("hidden")) {
+            if (soundOffIcon.classList.contains("hidden")) {
                 playCorrectSound();
             };
         }, 1200);
-
-    } else {
+    }
+    //if user's answer is incorrect
+    else {
         setTimeout(() => {
             document.querySelector(".selected").classList.add("selected_wrong");
             let correctInput = document.querySelector('input[value="' + correctAnswer + '"]');
             correctInput.parentNode.parentNode.classList.add('selected_correct');
-
-            if (document.querySelector('.sound_off').classList.contains("hidden")) {
+            if (soundOffIcon.classList.contains("hidden")) {
                 playWrongSound();
             };
         }, 1500);
-    };
+    }
+}
 
-    nextBtn.classList.add('hidden');
-    resetBtn.classList.add('hidden');
 
-    // Check is this the last question? 
+
+/** Check is this the last question? */
+function checkIsLastQuestion() {
+
+    // Question isn't last!
     if (questionNumber !== randomQuestions.length - 1) {
         questionNumber++;
         nextBtn.onclick = function () {
@@ -432,9 +443,11 @@ function checkAnswer() {
             selectedRadio();
             selectAnswer();
         };
-    } else {
+    }
+    // Question is last!
+    else {
         setTimeout(() => {
-            document.querySelector(".quiz_button_reset").classList.remove('hidden');
+            resetBtn.classList.remove('hidden');
             nextBtn.outerHTML =
                 `
                 <button class="quiz_button_finish" type="button">
@@ -446,16 +459,15 @@ function checkAnswer() {
                 showResults();
             }
         }, 1500);
-    };
-};
+    }
+}
 
-
+/**After completing all questions display result based on the number of correct answers. */
 function showResults() {
     document.querySelector(".block_score_questionof").outerHTML = " ";
     document.querySelector(".quiz_answers").outerHTML = " ";
-    document.querySelector(".quiz_button_reset").outerHTML = " ";
-    document.querySelector(".quiz_buttons").className += ' play_again';
-    // document.querySelector(".quiz_button_finish").outerHTML = " ";
+    resetBtn.outerHTML = " ";
+    quizBtns.className += ' play_again';
 
     let resultsTemplate = `
         <h2 class="results-title">%title%</h2>
@@ -476,7 +488,7 @@ function showResults() {
         message = 'But, there is still lots of space for improvement!';
     } else {
         title = 'Don\'t be upset...';
-        message = 'Learn the theory and try again!';
+        message = 'Learn and try again!';
     };
 
     let result = `Correct ${score} of ${randomQuestions.length} answers!`;
@@ -494,36 +506,33 @@ function showResults() {
     };
 };
 
+/**Toggle between hide or visible pop-up "Choose" window */
+function toggleModalChoose() {
+    popupChooseAnswer.classList.toggle('popup_visible');
+}
 
-// Pop-up choose answer
-function showChooseAnswer() {
-    popupChooseAnswer.className += " popup_visible";
-};
+/**Toggle between hide or visible pop-up "Start Again" window */
+function showStartAgain() {
 
-function hideChooseAnswer() {
-    popupChooseAnswer.classList.remove("popup_visible");
-};
+    function toggleModalStartAgain() {
+        popupStartAgain.classList.toggle('popup_visible');
+    }
 
-// Pop-up are you sure to start again
-document.querySelector(".modal_start_again_btn_cancel").onclick = hideStartAgain;
-// document.querySelector(".close_btn_again").onclick = hideStartAgain;
-document.querySelector(".modal_start_again_btn_ok").onclick = restart;
+    toggleModalStartAgain();
+    if (soundOffIcon.classList.contains("hidden")) {
+        playNotificationSound();
+    };
+    document.querySelector(".modal_start_again_btn_cancel").onclick = toggleModalStartAgain;
+    document.querySelector(".modal_start_again_btn_ok").onclick = restart;
+}
 
+/**Reload Quiz page and start quiz again */
 function restart() {
     location.reload();
 }
 
-function showStartAgain() {
-    document.querySelector(".popup_start_again").className += " popup_visible";
-    if (document.querySelector('.sound_off').classList.contains("hidden")) {
-        playNotificationSound();
-    };
-};
 
-function hideStartAgain() {
-    document.querySelector(".popup_start_again").classList.remove("popup_visible");
-};
-
+/**Assigning a class "selected" to the parent block of the selected answer */
 function selectedRadio() {
     const radioButtons = document.querySelectorAll('input[type="radio"]');
     radioButtons.forEach(function (radioButton) {
@@ -543,47 +552,7 @@ function selectedRadio() {
     }
 };
 
-function playWrongSound() {
-    let wrongSound = document.getElementById('wrong');
-    wrongSound.play()
-};
-
-function playCorrectSound() {
-    let correctSound = document.getElementById('correct');
-    correctSound.play()
-};
-
-function playNotificationSound() {
-    let notificationSound = document.getElementById('notification');
-    notificationSound.play()
-};
-
-
-
-let muteOff = document.querySelector('.sound_off');
-let muteOn = document.querySelector('.sound_on');
-muteOff.onclick = soundOn;
-muteOn.onclick = soundOff;
-
-function soundOn() {
-    muteOff.classList.add('hidden');
-    muteOn.classList.remove('hidden');
-};
-
-function soundOff() {
-    muteOn.classList.add('hidden');
-    muteOff.classList.remove('hidden');
-};
-
-function redirectToQuizPage() {
-    window.location.href = 'quiz.html';
-};
-
-function toggleMenu() {
-    const navMenu = document.querySelector('.nav');
-    navMenu.classList.toggle('show');
-};
-
+/**If an answer is not selected the button 'Next' won't work*/
 function selectAnswer() {
     nextBtn.onclick = function () {
         let checkedRadio = listAnswers.querySelector("input:checked");
@@ -591,22 +560,72 @@ function selectAnswer() {
         // If an answer is not selected the function exits
         if (!checkedRadio) {
             // Show pop-up window with text "Select answer"
-            showChooseAnswer();
-            if (document.querySelector('.sound_off').classList.contains("hidden")) {
+            toggleModalChoose()
+            if (soundOffIcon.classList.contains("hidden")) {
                 playNotificationSound();
             };
             // Hide pop-up window with text Choose answer
-            document.querySelector(".modal_choose_answer_btn").onclick = hideChooseAnswer;
-            document.querySelector(".close_btn").onclick = hideChooseAnswer;
+            document.querySelector(".close_btn").onclick = toggleModalChoose;
+            document.querySelector(".modal_choose_answer_btn").onclick = toggleModalChoose;
+        }
+    };
+}
 
-        };
-    }
+//Sound
+
+/**Play sound when user answers incorrect*/
+function playWrongSound() {
+    let wrongSound = document.getElementById('wrong');
+    wrongSound.play()
 };
+
+/**Play sound when user answers correct*/
+function playCorrectSound() {
+    let correctSound = document.getElementById('correct');
+    correctSound.play()
+};
+
+/**Play sound when pop-up window appears*/
+function playNotificationSound() {
+    let notificationSound = document.getElementById('notification');
+    notificationSound.play()
+};
+
+/**Turn on the sound */
+function soundOn() {
+    soundOffIcon.classList.add('hidden');
+    soundOnIcon.classList.remove('hidden');
+};
+
+/**Turn off the sound */
+function soundOff() {
+    soundOnIcon.classList.add('hidden');
+    soundOffIcon.classList.remove('hidden');
+};
+
+
+
+/**Open quiz page when click btn on the main page*/
+function redirectToQuizPage() {
+    window.location.href = 'quiz.html';
+};
+
+
+
+/**Toggle nav menu for mobile screens*/
+function toggleMenu() {
+    const navMenu = document.querySelector('.nav');
+    navMenu.classList.toggle('show');
+};
+
+
 
 clearHtml()
 showQuestion()
 increaseQuestionOf();
 selectedRadio();
-resetBtn.onclick = showStartAgain;
 selectAnswer();
 
+soundOffIcon.onclick = soundOn;
+soundOnIcon.onclick = soundOff;
+resetBtn.onclick = showStartAgain;

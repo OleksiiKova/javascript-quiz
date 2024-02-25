@@ -13,7 +13,9 @@
 
   <body>
     <div class="wrapper">
+      <!-- Nav menu -->
       <div class="menu_container">
+        <!-- Burger block for mobile screens -->
         <div class="burger_block">
           <div class="burger_menu" onclick="toggleMenu()">
             <div class="bar"></div>
@@ -38,7 +40,9 @@
         </div>
       </div>
       <h1 class="title">Check your JavaScript knowledge by having fun!</h1>
+      <!-- Block quiz -->
       <div class="quiz">
+        <!-- Sound block -->
         <div class="sound_block">
           <div>
             <span class="sound_off"
@@ -51,25 +55,30 @@
             ></span>
           </div>
         </div>
+        <!-- Answer block -->
         <div class="quiz_question">
           <h2 class="quiz_title">Question 1</h2>
         </div>
+        <!-- Result block -->
         <div class="results_container"></div>
         <div class="quiz_answers">
           <ul class="quiz_answers_list"></ul>
         </div>
+        <!-- Score block -->
         <div class="block_score_questionof">
           <div class="quiz_question_of">Question 1 of 10</div>
           <div class="quiz_score">
             Correct answers: <span class="score_correct_answer">0</span>
           </div>
         </div>
+        <!-- Block of buttons -->
         <div class="quiz_buttons">
           <button class="quiz_button_reset">Start again</button>
           <button class="quiz_button_next" type="button">Next</button>
         </div>
       </div>
     </div>
+    <!-- Pop-up windows -->
     <div class="popup_choose_answer">
       <div class="modal_choose_answer">
         <button class="close_btn"><i class="fa-solid fa-xmark"></i></button>
@@ -79,9 +88,6 @@
     </div>
     <div class="popup_start_again">
       <div class="modal_start_again">
-        <!-- <button class="close_btn_again">
-          <i class="fa-solid fa-xmark"></i>
-        </button> -->
         <p class="modal_start_again_text">
           Are you sure?<br />
           All the progress will be lost!
@@ -92,6 +98,7 @@
         </div>
       </div>
     </div>
+    <!-- Audio block -->
     <div class="audio-block">
       <audio id="correct" src="assets/sounds/correct.mp3"></audio>
       <audio id="wrong" src="assets/sounds/wrong.mp3"></audio>

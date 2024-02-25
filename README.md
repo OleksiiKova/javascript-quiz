@@ -33,11 +33,39 @@ All pages have a header that allows you to navigate to different pages from any 
 
 ### Skeleton
 
-The website is designed to be clear and simple. To create a wireframe I used Balsamiq software. PDF file with my wireframe you cand find [here](/readme_images/wireframe_js_quiz.pdf).
+The website is designed to be clear and simple. To create a wireframe I used Balsamiq software. PDF file with my wireframe you cand find [here](readme_images/wireframe_js_quiz.pdf).
 
 ### Surface
 
-To prevent the site from being too cluttered, I used a palette of only three colours.
+I used a palette of four colours.
 
+![Palette](readme_images/Colour_palette.png)
 
-<!-- JavaScript quiz consists of only one main page, but thanks to JS it allows you to replace content when it is needed and how many times it is needed. -->
+## Features
+
+### Existing Features
+
+- **Navigation Bar**
+
+  - Featured on all three pages, the full responsive navigation bar includes links to the Home, Quiz and Feedback pages and is identical in each page to allow for easy navigation.
+  - This section will allow the user to easily navigate from page to page across all devices without having to revert back to the previous page via the ‘back’ button.
+
+  ![Nav Bar](readme_images/Nav_bar.png)
+
+- **Introduction and rules section**
+
+  - Contains title and rules of the quiz.
+  - Also have a button "Start quiz", qhich allows to open Quiz page.
+
+  ![Introduction and rules](readme_images/Home.png)
+
+- **Quiz block**
+
+  - Quiz consists of 10 questions, randomly selected each time from an array containing over 50 questions.
+  - After completing all 10 questions, you will receive your result based on the number of correct answers. There are 4 possible results.
+  - The quiz can be restarted from the beginning, but to prevent accidental clicking and potential loss of progress, a pop-up window with a question will be displayed after clicking the "Start again" button.
+  - If your answer is correct, the line will be highlighted in green. In case of an incorrect answer, two lines will be highlighted - the incorrect answer in red and the correct answer in green.
+
+  ![Quiz](readme_images/quiz.png)
+
+  ![Pop-up](/readme_images/pop-up_start_again.png)

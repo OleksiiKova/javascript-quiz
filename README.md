@@ -3,6 +3,8 @@
 JavaScript quiz is the game or competition whose purpose is to test your knowledge. And as you may have guessed from the name of the site, this is the game for testing knowledge of one of the most popular programming languages - JavaScript.
 This quiz is designed to help you make sure of your knowledge, and also relax and have fun.
 
+![Responsice Mockup](readme_images/Mockup_responsive.png)
+
 ## Technologies
 
 1. Balsamiq - to create a wireframe.
@@ -37,7 +39,7 @@ The website is designed to be clear and simple. To create a wireframe I used Bal
 
 ### Surface
 
-I used a palette of four colours.
+I used a palette of such colours.
 
 ![Palette](readme_images/Colour_palette.png)
 

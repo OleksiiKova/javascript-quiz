@@ -57,17 +57,18 @@ I used a palette of such colours.
 - **Introduction and rules section**
 
   - Contains title and rules of the quiz.
-  - Also have a button "Start quiz", qhich allows to open Quiz page.
+  - Also have a button "Start quiz", which allows to open the Quiz page.
 
   ![Introduction and rules](readme_images/Home.png)
 
 - **Quiz block**
 
-  - Quiz consists of 10 questions, randomly selected each time from an array containing over 50 questions.
+  - The quiz consists of 10 questions, randomly selected each time from an array containing over 50 questions.
   - After completing all 10 questions, you will receive your result based on the number of correct answers. There are 4 possible results.
-  - The quiz can be restarted from the beginning, but to prevent accidental clicking and potential loss of progress, a pop-up window with a question will be displayed after clicking the "Start again" button.
   - If your answer is correct, the line will be highlighted in green. In case of an incorrect answer, two lines will be highlighted - the incorrect answer in red and the correct answer in green.
 
   ![Quiz](readme_images/quiz.png)
+
+  - The quiz can be restarted from the beginning, but to prevent accidental clicking and potential loss of progress, a pop-up window with a question will be displayed after clicking the "Start again" button.
 
   ![Pop-up](/readme_images/pop-up_start_again.png)

@@ -591,13 +591,13 @@ function playNotificationSound() {
     notificationSound.play()
 };
 
-/**Turn on the sound */
+/**Turn on the sound on the Quiz page */
 function soundOn() {
     soundOffIcon.classList.add('hidden');
     soundOnIcon.classList.remove('hidden');
 };
 
-/**Turn off the sound */
+/**Turn off the sound on the Quiz page */
 function soundOff() {
     soundOnIcon.classList.add('hidden');
     soundOffIcon.classList.remove('hidden');

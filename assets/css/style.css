@@ -149,7 +149,8 @@ body {
 .quiz_button_reset,
 .quiz_button_finish,
 .start_quiz_btn,
-.reset_btn {
+.reset_btn,
+.submit_btn {
   width: 150px;
   padding: 10px;
   font-size: 16px;
@@ -164,6 +165,7 @@ body {
 .quiz_button_reset:hover,
 .start_quiz_btn:hover,
 .reset_btn:hover,
+.submit_btn:hover,
 .quiz_button_finish:hover {
   color: rgb(150, 231, 231);
 }
@@ -369,7 +371,6 @@ li {
 
 /* Media query: phone 300-767px width*/
 @media screen and (max-width: 767px) {
-
   /*------Burger menu------*/
   .burger_menu {
     cursor: pointer;
@@ -442,7 +443,7 @@ li {
     margin-bottom: 30px;
   }
 
-   /* ----Quiz page---- */
+  /* ----Quiz page---- */
   .container {
     width: auto;
     padding: 0 20px;

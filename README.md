@@ -19,8 +19,7 @@ This quiz is designed to help you make sure of your knowledge, and also relax an
 
 ### Scope
 
-JavaScript quiz is primarily created for developers of all levels to test their knowledge. And it can be used independently or as a separate page of an existing site.
-It can be used both for entertainment purposes and as part of a Sowtware Development courses.
+JavaScript quiz is primarily created for developers of all levels to test their knowledge. It can be used both for entertainment purposes and as part of a Sowtware Development courses.
 
 ### Structure
 
@@ -36,7 +35,9 @@ All pages have a header that allows you to navigate to different pages from any 
 
 The website is designed to be clear and simple. To create a wireframe I used Balsamiq software. PDF file with my wireframe you cand find [here](/readme_images/wireframe_js_quiz.pdf).
 
+### Surface
 
+To prevent the site from being too cluttered, I used a palette of only three colours.
 
 
 <!-- JavaScript quiz consists of only one main page, but thanks to JS it allows you to replace content when it is needed and how many times it is needed. -->

@@ -64,11 +64,20 @@ I used a palette of such colours.
 - **Quiz block**
 
   - The quiz consists of 10 questions, randomly selected each time from an array containing over 50 questions.
-  - After completing all 10 questions, you will receive your result based on the number of correct answers. There are 4 possible results.
   - If your answer is correct, the line will be highlighted in green. In case of an incorrect answer, two lines will be highlighted - the incorrect answer in red and the correct answer in green.
 
   ![Quiz](readme_images/quiz.png)
 
+  - After completing all 10 questions, you will receive your result based on the number of correct answers. There are 4 possible results.
+
+  ![Result](/readme_images/result.png)
+
   - The quiz can be restarted from the beginning, but to prevent accidental clicking and potential loss of progress, a pop-up window with a question will be displayed after clicking the "Start again" button.
 
   ![Pop-up](/readme_images/pop-up_start_again.png)
+
+- **The Feedback page**
+
+  - The form allows you to leave feedback or suggestions on how the site can be improved. This is crucial, as any identified errors can be corrected promptly. 
+
+  ![The Contact page](readme_images/feedback.png.png)

@@ -95,6 +95,31 @@ I used a palette of such colours.
 ### Validator Testing
 
 - HTML
-  - No errors were returned when passing through the official W3C validator: [Home page](https://validator.w3.org/nu/?doc=https%3A%2F%2Foleksiikova.github.io%2Fkovalenko-photography%2Findex.html), [Gallery page](https://validator.w3.org/nu/?doc=https%3A%2F%2Foleksiikova.github.io%2Fkovalenko-photography%2Fgallery.html), [Gallery album page](https://validator.w3.org/nu/?doc=https%3A%2F%2Foleksiikova.github.io%2Fkovalenko-photography%2Fgallery_family.html), [About page](https://validator.w3.org/nu/?doc=https%3A%2F%2Foleksiikova.github.io%2Fkovalenko-photography%2Fabout.html), [Contact page](https://validator.w3.org/nu/?doc=https%3A%2F%2Foleksiikova.github.io%2Fkovalenko-photography%2Fcontact.html).
+  - No errors were returned when passing through the official W3C validator: [Home page](https://validator.w3.org/nu/?doc=https%3A%2F%2Foleksiikova.github.io%2Fjavascript-quiz%2Findex.html), [Quiz page](https://validator.w3.org/nu/?doc=https%3A%2F%2Foleksiikova.github.io%2Fjavascript-quiz%2Fquiz.html), [Feedback page](https://validator.w3.org/nu/?doc=https%3A%2F%2Foleksiikova.github.io%2Fjavascript-quiz%2Ffeedback.html).
 - CSS
-  - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Foleksiikova.github.io%2Fkovalenko-photography%2Findex.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+  - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Foleksiikova.github.io%2Fjavascript-quiz%2Findex.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en).
+
+### Fixed Bugs
+
+- When assigning an event to the 'Get results' button, no action occurred, and there was an error in the console. Since the 'Get results' button appeared in the HTML using the innerText property by replacing another button. The problem was solved by declaring the variable with this button after the innerText property, and not before it..
+
+![Fixed](readme_images/Unfixed_issue.png)
+
+## Lighthouse Test
+
+Thanks to the Lighthouse test, which is built-in the Google Chrome browser, such important indicators as performance, accessibility and SEO have been improved to almost the maximum value.
+
+![Lighthouse](/readme_images/Lighthouse.png)
+
+## Deployment
+
+The site was deployed to Git Hub pages using the following steps:
+
+- In the Github repository, the Setting tab.
+- In the left side of the screen in Code and Automation section select 'Pages'.
+- In the Build and Deployment section for Source, select 'Deploy from a branch' from the drop-down list.
+- For Branch, select 'main' from the drop-down list and Save.
+- On the top of the page, the link to the complete website is provided.
+- The deployed site will update automatically upon new commits to the master branch.
+
+The live link can be found [here](https://oleksiikova.github.io/javascript-quiz/index.html).

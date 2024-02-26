@@ -122,6 +122,9 @@ I used a palette of such colours.
 - CSS
   - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Foleksiikova.github.io%2Fjavascript-quiz%2Findex.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en).
 
+- JavaScript
+  - No warnings were found when passing through the official [(jshin) validator](https://jshint.com/)
+
 ### Fixed Bugs
 
 - When assigning an event to the 'Get results' button, no action occurred, and there was an error in the console. Since the 'Get results' button appeared in the HTML using the innerText property by replacing another button. The problem was solved by declaring the variable with this button after the innerText property, and not before it..
@@ -130,10 +133,9 @@ I used a palette of such colours.
 
 - On the Home and Feedback pages, there were such errors in the console. The problem was solved by adding the following code in JS to prevent its execution on other pages where it is not needed.
 
-document.addEventListener('DOMContentLoaded', function () {
 if (document.body.id === 'quiz_Page') {
+
 }
-});
 
 ![Fixed](readme_images/Unfixed_issue-2.png)
 

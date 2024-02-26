@@ -91,6 +91,7 @@ I used a palette of such colours.
 ### Manual testing
 
 | Feature tested | Expected outcome | Actual outcome |
+|-------------|-------------|-------------|
 | Click "Start quiz" button on the home page | Open the Quiz page | Open the Quiz page |
 
 ### Validator Testing

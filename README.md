@@ -1,7 +1,7 @@
 # JavaScript quiz
 
-JavaScript quiz is the game or competition whose purpose is to test your knowledge. And as you may have guessed from the name of the site, this is the game for testing knowledge of one of the most popular programming languages - JavaScript.
-This quiz is designed to help you make sure of your knowledge, and also relax and have fun.
+The JavaScript quiz is a game or competition designed to test your knowledge. As you may have guessed from the site's name, it's a game for testing knowledge of one of the most popular programming languages - JavaScript.
+This quiz is intended to help you confirm your knowledge and, at the same time, provide a relaxing and enjoyable experience.
 
 ![Responsice Mockup](readme_images/Mockup_responsive.png)
 
@@ -78,6 +78,23 @@ I used a palette of such colours.
 
 - **The Feedback page**
 
-  - The form allows you to leave feedback or suggestions on how the site can be improved. This is crucial, as any identified errors can be corrected promptly. 
+  - The form allows you to leave feedback or suggestions on how the site can be improved. This is crucial, as any identified errors can be corrected promptly.
 
   ![Feedback](readme_images/feedback.png)
+
+### Features Left to Implement
+
+- As I progress through the course and learn about back-end development, I would like to set the correct value for the 'action' attribute in the form tag. This way, when the user presses the 'Submit' button, I can receive an email with the submitted data.
+
+## Testing
+
+### Manual testing
+
+
+
+### Validator Testing
+
+- HTML
+  - No errors were returned when passing through the official W3C validator: [Home page](https://validator.w3.org/nu/?doc=https%3A%2F%2Foleksiikova.github.io%2Fkovalenko-photography%2Findex.html), [Gallery page](https://validator.w3.org/nu/?doc=https%3A%2F%2Foleksiikova.github.io%2Fkovalenko-photography%2Fgallery.html), [Gallery album page](https://validator.w3.org/nu/?doc=https%3A%2F%2Foleksiikova.github.io%2Fkovalenko-photography%2Fgallery_family.html), [About page](https://validator.w3.org/nu/?doc=https%3A%2F%2Foleksiikova.github.io%2Fkovalenko-photography%2Fabout.html), [Contact page](https://validator.w3.org/nu/?doc=https%3A%2F%2Foleksiikova.github.io%2Fkovalenko-photography%2Fcontact.html).
+- CSS
+  - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Foleksiikova.github.io%2Fkovalenko-photography%2Findex.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)

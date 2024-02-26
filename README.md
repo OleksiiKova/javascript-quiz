@@ -90,13 +90,26 @@ I used a palette of such colours.
 
 ### Manual testing
 
-| Feature tested                                | Expected outcome   | Actual outcome     |
-| --------------------------------------------- | ------------------ | ------------------ |
-| Click "Start quiz" button on the home page    | Open the Quiz page | Open the Quiz page |
-| Click Home, Quiz, Feedback link in the header | Open relevant page | Open relevant page |
-| Tested quiz | | |
-| Click one of the answer in the quiz | Change background of this answer to gary and blink a few seconds. Hide buttons "Start again" and "Next" | Change background of this answer to gary and blink a few seconds. Hide buttons "Start again" and "Next". |
-| After it, if the answer correct | Change background colour of this answer to green. Show buttons "Start again" and "Next". | Change background colour of this answer to green. Show buttons "Start again" and "Next". | 
+| Feature tested                                            | Expected outcome                                                                                                                 | Actual outcome                                                                                                                   |
+| --------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| Click "Start quiz" button on the home page.               | Open the Quiz page.                                                                                                              | Open the Quiz page.                                                                                                              |
+| Click Home, Quiz, Feedback link in the header.            | Open relevant page.                                                                                                              | Open relevant page.                                                                                                              |
+| TESTED THE QUIZ.                                          |                                                                                                                                  |                                                                                                                                  |
+| Click one of the answer in the quiz.                      | Change background of this answer to grey and blink a few seconds. Hide buttons "Start again" and "Next".                         | Change background of this answer to grey and blink a few seconds. Hide buttons "Start again" and "Next".                         |
+| After it, if the answer correct.                          | Change background colour of this answer to green. Show buttons "Start again" and "Next".                                         | Change background colour of this answer to green. Show buttons "Start again" and "Next".                                         |
+| If the answer incorrect.                                  | Change background colour of this answer to red. Highlighting the correct answer in green. Show buttons "Start again" and "Next". | Change background colour of this answer to red. Highlighting the correct answer in green. Show buttons "Start again" and "Next". |
+| Click "Next" button.                                      | If the answer is selected - output of the next question. If not, show pop-up window "Select answer".                             | If the answer is selected - output of the next question. If not, show pop-up window "Select answer".                             |
+| Click "OK" button in the pop-up window "Select answer".   | Close the pop-up window and back to the quiz.                                                                                    | Close the pop-up window and back to the quiz.                                                                                    |
+| Click "Start again" button.                               | Show the pop-up window "Are you sure? All the progress will be lost!"                                                            | Show the pop-up window "Are you sure? All the progress will be lost!"                                                            |
+| Click "Cancel" button in the pop-up window "Start again". | Close the pop-up window and back to the quiz.                                                                                    | Close the pop-up window and back to the quiz.                                                                                    |
+| Click "OK" button in the pop-up window "Start again".     | Reload the page and start quiz from the beginning.                                                                               | Reload the page and start quiz from the beginning.                                                                               |
+| After answering 10 questions.                             | Change button "Next" to the "Get results".                                                                                       | Change button "Next" to the "Get results".                                                                                       |
+| Click "Get reults" button.                                | Show the result based on the number of correct answers.                                                                          | Show the result based on the number of correct answers.                                                                          |
+
+| Click icon "Sound off" in the upper right corner. | Change icon to "Sound off". When answering, a sound is played indicating whether the response is correct or incorrect. Also a sound played when appears pop-up windows. | Change icon to "Sound off". When answering, a sound is played indicating whether the response is correct or incorrect. Also a sound played when appears pop-up windows. |
+| Click icon "Sound on" in the upper right corner. | All sounds in the quiz are turned off. | All sounds in the quiz are turned off. |
+
+
 ### Validator Testing
 
 - HTML

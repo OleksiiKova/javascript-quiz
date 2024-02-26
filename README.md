@@ -128,6 +128,16 @@ I used a palette of such colours.
 
 ![Fixed](readme_images/Unfixed_issue.png)
 
+- On the Home and Feedback there was such errors in the console. The problem was solved by adding such code in JS. To prevent exists code on other pages where it's don't need. 
+
+document.addEventListener('DOMContentLoaded', function () {
+    if (document.body.id === 'quiz_Page') {
+    }
+});
+
+
+![Fixed](readme_images/Unfixed_issue-2.png)
+
 ## Lighthouse Test
 
 Thanks to the Lighthouse test, which is built-in the Google Chrome browser, such important indicators as performance, accessibility and SEO have been improved to almost the maximum value.

@@ -104,9 +104,8 @@ I used a palette of such colours.
 | Click "Cancel" button in the pop-up window "Start again". | Close the pop-up window and back to the quiz.                                                                                    | Close the pop-up window and back to the quiz.                                                                                    |
 | Click "OK" button in the pop-up window "Start again".     | Reload the page and start quiz from the beginning.                                                                               | Reload the page and start quiz from the beginning.                                                                               |
 | After answering 10 questions.                             | Change button "Next" to the "Get results".                                                                                       | Change button "Next" to the "Get results".                                                                                       |
-| Click "Get reults" button.                                | Show the result based on the number of correct answers.                                                                          | Show the result based on the number of correct answers.                                                                          |
-
-| Click icon "Sound off" in the upper right corner. | Change icon to "Sound on". When answering - a sound is played, or when appears pop-up windows. | Change icon to "Sound on". When answering - a sound is played, or when appears pop-up windows. |
+| Click "Get reults" button.                                | Show the result based on the number of correct answers.                                                                          | Show the result based on the number of correct answers. |
+| Click icon "Sound off" in the upper right corner. | Change icon to "Sound on". When answering or when appears pop-up windows - a sound is played. | Change icon to "Sound on". When answering or when appears pop-up windows - a sound is played. |
 | Click icon "Sound on" in the upper right corner. | Change icon to "Sound off". All sounds in the quiz are turned off. | Change icon to "Sound off". All sounds in the quiz are turned off. |
 
 ### Validator Testing

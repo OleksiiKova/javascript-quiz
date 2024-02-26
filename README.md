@@ -90,10 +90,13 @@ I used a palette of such colours.
 
 ### Manual testing
 
-| Feature tested | Expected outcome | Actual outcome |
-|-------------|-------------|-------------|
-| Click "Start quiz" button on the home page | Open the Quiz page | Open the Quiz page |
-
+| Feature tested                                | Expected outcome   | Actual outcome     |
+| --------------------------------------------- | ------------------ | ------------------ |
+| Click "Start quiz" button on the home page    | Open the Quiz page | Open the Quiz page |
+| Click Home, Quiz, Feedback link in the header | Open relevant page | Open relevant page |
+| Tested quiz | | |
+| Click one of the answer in the quiz | Change background of this answer to gary and blink a few seconds. Hide buttons "Start again" and "Next" | Change background of this answer to gary and blink a few seconds. Hide buttons "Start again" and "Next". |
+| After it, if the answer correct | Change background colour of this answer to green. Show buttons "Start again" and "Next". | Change background colour of this answer to green. Show buttons "Start again" and "Next". | 
 ### Validator Testing
 
 - HTML

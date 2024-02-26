@@ -113,7 +113,7 @@ I used a palette of such colours.
 | Set screen size for phones in the Devtools.                                                                | The "hamburger menu" appears instead of the header.                                                                                       | The "hamburger menu" appears instead of the header.                                                                                       |
 | Click the "hamburger menu".                                                                                | Open a block with site navigation links.                                                                                                  | Open a block with site navigation links.                                                                                                  |
 | Tested on different browsers (Chrome, Opera, Safari and Microsoft Edge).                                   | All the above tests behave the same.                                                                                                      | All the above tests behave the same.                                                                                                      |
-| Tested on different screen sizes (phones, tablets and laptops).                                            | The site has a responsive design. It adapts to any screen and displays information in a format convenient for work.                       | The site has a responsive design. It adapts to any screen and displays information in a format convenient for work.                       |
+| Tested on different screen sizes (phones, tablets and laptops).                                            | The site has a responsive design. The layout changes appropriately and maintains the page's structural integrity across device screen sizes                       | The site has a responsive design. The layout changes appropriately and maintains the page's structural integrity across device screen sizes                       |
 
 ### Validator Testing
 
@@ -123,7 +123,7 @@ I used a palette of such colours.
   - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Foleksiikova.github.io%2Fjavascript-quiz%2Findex.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en).
 
 - JavaScript
-  - No warnings were found when passing through the official [(jshin) validator](https://jshint.com/)
+  - No warnings were found when passing through the official [(Jshin) validator](https://jshint.com/).
 
 ### Fixed Bugs
 

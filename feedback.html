@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript Quiz</title>
-    <!-- Meta tags for search engines -->
-    <meta name="description" content="JavaScript Quiz">
-    <meta name="keywords"
-        content="Quiz, JS quiz, JavaScript quiz, test JavaScript knowledge">
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="assets/css/style.css">
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="assets/favicon/icons8-quiz-16.png">
-  </head>
 
-  <body>
-    <div class="wrapper">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Quiz</title>
+  <!-- Meta tags for search engines -->
+  <meta name="description" content="JavaScript Quiz">
+  <meta name="keywords" content="Quiz, JS quiz, JavaScript quiz, test JavaScript knowledge">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="assets/favicon/icons8-quiz-16.png">
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
       <!-- Nav menu -->
       <div class="menu_container">
         <!-- Burger block for mobile screens -->
@@ -44,6 +45,8 @@
           </ul>
         </div>
       </div>
+    </header>
+    <main>
       <!-- Feedback block -->
       <div class="feedback_container">
         <h2 class="feedback_title">Feedback!</h2>
@@ -52,38 +55,14 @@
           can be improved? Please let me know. Your feedback is important to us.
         </p>
         <!-- Feedback form -->
-        <form
-          id="my"
-          class="feedback_form"
-          action="https://formdump.codeinstitute.net"
-          method="post"
-        >
+        <form id="my" class="feedback_form" action="https://formdump.codeinstitute.net" method="post">
           <div class="feedback_contact_data">
-            <input
-              class="feedback_name"
-              type="text"
-              id="name"
-              placeholder="Your name:"
-              name="name"
-              required
-            >
-            <input
-              class="feedback_email"
-              type="email"
-              id="email"
-              placeholder="Your email:"
-              name="email"
-            >
+            <input class="feedback_name" type="text" id="name" placeholder="Your name:" name="name" required>
+            <input class="feedback_email" type="email" id="email" placeholder="Your email:" name="email">
           </div>
           <div class="feedback_input">
-            <textarea
-              class="feedback_textarea"
-              cols="30"
-              rows="10"
-              name="message"
-              placeholder="Write your message here..."
-              required
-            ></textarea>
+            <textarea class="feedback_textarea" cols="30" rows="10" name="message"
+              placeholder="Write your message here..." required></textarea>
           </div>
           <div class="feedback_buttons">
             <button class="reset_btn" type="reset">Clear</button>
@@ -91,13 +70,12 @@
           </div>
         </form>
       </div>
-    </div>
+    </main>
+  </div>
 
-    <!-- Font awesome kit -->
-    <script
-      src="https://kit.fontawesome.com/1e754c32b5.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="assets/js/script.js"></script>
-  </body>
+  <!-- Font awesome kit -->
+  <script src="https://kit.fontawesome.com/1e754c32b5.js" crossorigin="anonymous"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+
 </html>

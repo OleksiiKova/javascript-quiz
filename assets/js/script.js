@@ -1,3 +1,5 @@
+"use strict";
+
 document.addEventListener('DOMContentLoaded', function () {
     let questions = [{
             question: "Where is the correct place to insert a JavaScript?",
@@ -320,7 +322,6 @@ document.addEventListener('DOMContentLoaded', function () {
         quizBtns.classList.remove('show-easy');
     }
 
-
     /**Function for choose random questions from array */
     function getRandomQuestions(array, n) {
         // Shuffle array
@@ -331,7 +332,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //Choose 10 random questions
     const randomQuestions = getRandomQuestions(questions, 10);
-
 
     /**Create question and answers from array and put them in HTML */
     function showQuestion() {
@@ -357,16 +357,12 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-
-
     /**Definition of a sequential question */
     function increaseQuestionOf() {
         let quizQuestionOf = document.querySelector(".quiz_question_of");
         let numberOfQuestion = questionNumber + 1;
         quizQuestionOf.innerHTML = `Question ${numberOfQuestion} of ${randomQuestions.length}`;
     }
-
-
 
     /**Check Answer (is correct? Is last?) */
     function checkAnswer() {
@@ -394,7 +390,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         checkIsLastQuestion();
     }
-
 
     /**Compare user's and correct answers */
     function ifAnswerCorrect() {
@@ -426,8 +421,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }, 1500);
         }
     }
-
-
 
     /** Check is this the last question? */
     function checkIsLastQuestion() {
@@ -530,7 +523,6 @@ document.addEventListener('DOMContentLoaded', function () {
         location.reload();
     }
 
-
     /**Assigning a class "selected" to the parent block of the selected answer */
     function selectedRadio() {
         const radioButtons = document.querySelectorAll('input[type="radio"]');
@@ -614,17 +606,15 @@ document.addEventListener('DOMContentLoaded', function () {
         soundOnIcon.onclick = soundOff;
         resetBtn.onclick = showStartAgain;
     }
-
-
-    /**Open quiz page when click btn on the main page*/
-    function redirectToQuizPage() {
-        window.location.href = 'quiz.html';
-    }
-
-    /**Toggle nav menu for mobile screens*/
-    function toggleMenu() {
-        const navMenu = document.querySelector('.nav');
-        navMenu.classList.toggle('show');
-    }
-
 });
+
+/**Open quiz page when click btn on the main page*/
+function redirectToQuizPage() {
+    window.location.href = 'quiz.html';
+}
+
+/**Toggle nav menu for mobile screens*/
+function toggleMenu() {
+    const navMenu = document.querySelector('.nav');
+    navMenu.classList.toggle('show');
+}

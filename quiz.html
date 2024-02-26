@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript Quiz</title>
-    <!-- Meta tags for search engines -->
-    <meta name="description" content="JavaScript Quiz">
-    <meta name="keywords"
-        content="Quiz, JS quiz, JavaScript quiz, test JavaScript knowledge">
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="assets/css/style.css">
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="assets/favicon/icons8-quiz-16.png">
-  </head>
 
-  <body id="quiz_Page">
-    <div class="wrapper">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Quiz</title>
+  <!-- Meta tags for search engines -->
+  <meta name="description" content="JavaScript Quiz">
+  <meta name="keywords" content="Quiz, JS quiz, JavaScript quiz, test JavaScript knowledge">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="assets/favicon/icons8-quiz-16.png">
+</head>
+
+<body id="quiz_Page">
+  <div class="wrapper">
+    <header>
       <!-- Nav menu -->
       <div class="menu_container">
         <!-- Burger block for mobile screens -->
@@ -42,20 +43,18 @@
           </ul>
         </div>
       </div>
+    </header>
+    <main>
       <h1 class="title">Check your JavaScript knowledge by having fun!</h1>
       <!-- Block quiz -->
       <div class="quiz">
         <!-- Sound block -->
         <div class="sound_block">
           <div>
-            <span class="sound_off"
-              ><i class="fa-solid fa-volume-xmark"></i
-            ></span>
+            <span class="sound_off"><i class="fa-solid fa-volume-xmark"></i></span>
           </div>
           <div>
-            <span class="sound_on hidden"
-              ><i class="fa-solid fa-volume-high"></i
-            ></span>
+            <span class="sound_on hidden"><i class="fa-solid fa-volume-high"></i></span>
           </div>
         </div>
         <!-- Answer block -->
@@ -80,39 +79,38 @@
           <button class="quiz_button_next" type="button">Next</button>
         </div>
       </div>
+    </main>
+  </div>
+  <!-- Pop-up windows -->
+  <div class="popup_choose_answer">
+    <div class="modal_choose_answer">
+      <button class="close_btn"><i class="fa-solid fa-xmark"></i></button>
+      <p class="modal_choose_answer_text">Select answer!</p>
+      <button class="modal_choose_answer_btn">OK</button>
     </div>
-    <!-- Pop-up windows -->
-    <div class="popup_choose_answer">
-      <div class="modal_choose_answer">
-        <button class="close_btn"><i class="fa-solid fa-xmark"></i></button>
-        <p class="modal_choose_answer_text">Select answer!</p>
-        <button class="modal_choose_answer_btn">OK</button>
+  </div>
+  <div class="popup_start_again">
+    <div class="modal_start_again">
+      <p class="modal_start_again_text">
+        Are you sure?<br>
+        All the progress will be lost!
+      </p>
+      <div class="modal_start_again_btn">
+        <button class="modal_start_again_btn_cancel">Cancel</button>
+        <button class="modal_start_again_btn_ok">OK</button>
       </div>
     </div>
-    <div class="popup_start_again">
-      <div class="modal_start_again">
-        <p class="modal_start_again_text">
-          Are you sure?<br>
-          All the progress will be lost!
-        </p>
-        <div class="modal_start_again_btn">
-          <button class="modal_start_again_btn_cancel">Cancel</button>
-          <button class="modal_start_again_btn_ok">OK</button>
-        </div>
-      </div>
-    </div>
-    <!-- Audio block -->
-    <div class="audio-block">
-      <audio id="correct" src="assets/sounds/correct.mp3"></audio>
-      <audio id="wrong" src="assets/sounds/wrong.mp3"></audio>
-      <audio id="notification" src="assets/sounds/notification.mp3"></audio>
-    </div>
-    <!-- Font awesome kit -->
-    <script
-      src="https://kit.fontawesome.com/1e754c32b5.js"
-      crossorigin="anonymous"
-    ></script>
+  </div>
+  <!-- Audio block -->
+  <div class="audio-block">
+    <audio id="correct" src="assets/sounds/correct.mp3"></audio>
+    <audio id="wrong" src="assets/sounds/wrong.mp3"></audio>
+    <audio id="notification" src="assets/sounds/notification.mp3"></audio>
+  </div>
+  <!-- Font awesome kit -->
+  <script src="https://kit.fontawesome.com/1e754c32b5.js" crossorigin="anonymous"></script>
 
-    <script src="assets/js/script.js"></script>
-  </body>
+  <script src="assets/js/script.js"></script>
+</body>
+
 </html>

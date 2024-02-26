@@ -90,8 +90,6 @@ I used a palette of such colours.
 
 ### Manual testing
 
-
-
 ### Validator Testing
 
 - HTML
@@ -123,3 +121,13 @@ The site was deployed to Git Hub pages using the following steps:
 - The deployed site will update automatically upon new commits to the master branch.
 
 The live link can be found [here](https://oleksiikova.github.io/javascript-quiz/index.html).
+
+## Credits
+
+### Content
+
+- Some questions (about 20 ) for these quiz were taken from the quiz on the [W3schools](https://www.w3schools.com/quiztest/quiztest.asp?qtest=JS).
+
+### Media
+
+- Sounds were taken from [Pixabay](https://pixabay.com/).

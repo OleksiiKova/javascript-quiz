@@ -106,7 +106,7 @@ I used a palette of such colours.
 | After answering 10 questions.                             | Change button "Next" to the "Get results".                                                                                       | Change button "Next" to the "Get results".                                                                                       |
 | Click "Get reults" button.                                | Show the result based on the number of correct answers.                                                                          | Show the result based on the number of correct answers.                                                                          |
 
-| Click icon "Sound off" in the upper right corner. | Change icon to "Sound on", when answering, a sound is played indicating whether the response is correct or incorrect, also a sound played when appears pop-up windows. | Change icon to "Sound on", when answering, a sound is played indicating whether the response is correct or incorrect, also a sound played when appears pop-up windows. |
+| Click icon "Sound off" in the upper right corner. | Change icon to "Sound on". When answering, a sound is played indicating whether the response is correct or incorrect. <br> Also a sound played when appears pop-up windows. | Change icon to "Sound on". When answering, a sound is played indicating whether the response is correct or incorrect. <br> Also a sound played when appears pop-up windows. |
 | Click icon "Sound on" in the upper right corner. | Change icon to "Sound off". All sounds in the quiz are turned off. | Change icon to "Sound off". All sounds in the quiz are turned off. |
 
 ### Validator Testing

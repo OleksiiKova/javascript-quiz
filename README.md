@@ -90,6 +90,9 @@ I used a palette of such colours.
 
 ### Manual testing
 
+| Feature tested | Expected outcome | Actual outcome |
+| Click "Start quiz" button on the home page | Open the Quiz page | Open the Quiz page |
+
 ### Validator Testing
 
 - HTML
@@ -126,7 +129,7 @@ The live link can be found [here](https://oleksiikova.github.io/javascript-quiz/
 
 ### Content
 
-- Some questions (about 20 ) for these quiz were taken from the quiz on the [W3schools](https://www.w3schools.com/quiztest/quiztest.asp?qtest=JS).
+- Some questions (about 20) for these quiz were taken from the quiz on the [W3schools](https://www.w3schools.com/quiztest/quiztest.asp?qtest=JS).
 
 ### Media
 

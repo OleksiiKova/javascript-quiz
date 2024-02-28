@@ -1,16 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
+/* -----------------------------------General-------------------------- */
 body {
   background-color: rgb(3, 27, 27);
   margin: 0;
   font-family: Montserrat;
-}
-
-.quiz_answers label,
-.quiz_answers input,
-.sound_off,
-.sound_on {
-  cursor: pointer;
 }
 
 /* ----------------------------------Nav menu----------------------------*/
@@ -89,6 +83,13 @@ body {
 }
 
 /*----------------------------------Quiz page----------------------------------*/
+
+.quiz_answers label,
+.quiz_answers input,
+.sound_off,
+.sound_on {
+  cursor: pointer;
+}
 
 .sound_block {
   color: rgb(9, 88, 88);
